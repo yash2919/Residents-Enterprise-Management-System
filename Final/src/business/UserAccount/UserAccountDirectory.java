@@ -23,7 +23,7 @@ public class UserAccountDirectory {
     
     public UserAccount authenticateUser(String username, String password){
         for (UserAccount ua : userAccountList)
-            if (ua.getUsername().equals(username) && ua.getPassword().equals(password)){
+            if (ua.getUsername().equals(username) && ua.login(password)){
                 return ua;
             }
         return null;
@@ -32,7 +32,7 @@ public class UserAccountDirectory {
     public UserAccount createUserAccount(String username, String password, Employee employee, Role role){
         UserAccount userAccount = new UserAccount();
         userAccount.setUsername(username);
-        userAccount.setPassword(password);
+        userAccount.isPasswordValid(password);
         userAccount.setEmployee(employee);
         userAccount.setRole(role);
         userAccountList.add(userAccount);

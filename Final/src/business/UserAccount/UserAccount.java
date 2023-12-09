@@ -4,6 +4,9 @@ package business.UserAccount;
 import business.Employee.Employee;
 import business.Role.Role;
 import business.WorkQueue.WorkQueue;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 
 /**
  *
@@ -12,16 +15,17 @@ import business.WorkQueue.WorkQueue;
 public class UserAccount {
     
     private String username;
-    private String password;
+//    private String password;
     private Employee employee;
     private Role role;
     private WorkQueue workQueue;
+    private ArrayList<String> historyPass;
+    
 
     public UserAccount() {
+         historyPass=new ArrayList<String>();
         workQueue = new WorkQueue();
     }
-    
-    
     
     public String getUsername() {
         return username;
@@ -31,13 +35,13 @@ public class UserAccount {
         this.username = username;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
+//    public String getPassword() {
+//        return password;
+//    }
+//
+//    public void setPassword(String password) {
+//        this.password = password;
+//    }
 
     public Role getRole() {
         return role;
@@ -58,14 +62,56 @@ public class UserAccount {
     public WorkQueue getWorkQueue() {
         return workQueue;
     }
+            public ArrayList<String> getHistoryPass() {
+        return historyPass;
+    }
 
+    public void setHistoryPass(ArrayList<String> historyPass) {
+        this.historyPass = historyPass;
+    }
     
     
+        public boolean isPasswordValid(String newPassword) {
+        String hashedPassword = hashPassword(newPassword);
+        if (historyPass.contains(hashedPassword)) {
+            return false; // Password has been used before
+        }
+        historyPass.add(hashedPassword);
+        return true;
+    }
+    
+        public boolean login(String enteredPassword) {
+        if (historyPass.isEmpty()) {
+            return false; 
+        }
+
+        String hashedEnteredPassword = hashPassword(enteredPassword);
+        String latestPasswordHash = historyPass.get(historyPass.size() - 1);
+       
+        return latestPasswordHash.equals(hashedEnteredPassword);
+    }
+    
+    private String hashPassword(String password) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            byte[] hashBytes = md.digest(password.getBytes());
+            
+            StringBuilder hexHash = new StringBuilder();
+            for (byte b : hashBytes) {
+                hexHash.append(String.format("%02x", b));
+            }
+       
+            
+            return hexHash.toString();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     @Override
     public String toString() {
         return username;
     }
-    
-    
-    
+
 }
