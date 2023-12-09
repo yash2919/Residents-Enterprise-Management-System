@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class UserAccount {
     
     private String username;
-    private String password;
+//    private String password;
     private Employee employee;
     private Role role;
     private WorkQueue workQueue;
@@ -35,13 +35,13 @@ public class UserAccount {
         this.username = username;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
+//    public String getPassword() {
+//        return password;
+//    }
+//
+//    public void setPassword(String password) {
+//        this.password = password;
+//    }
 
     public Role getRole() {
         return role;
@@ -87,7 +87,7 @@ public class UserAccount {
 
         String hashedEnteredPassword = hashPassword(enteredPassword);
         String latestPasswordHash = historyPass.get(historyPass.size() - 1);
-
+       
         return latestPasswordHash.equals(hashedEnteredPassword);
     }
     
@@ -100,6 +100,7 @@ public class UserAccount {
             for (byte b : hashBytes) {
                 hexHash.append(String.format("%02x", b));
             }
+       
             
             return hexHash.toString();
         } catch (NoSuchAlgorithmException e) {

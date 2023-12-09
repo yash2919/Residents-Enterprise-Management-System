@@ -32,7 +32,7 @@ public class UserAccountDirectory {
     public UserAccount createUserAccount(String username, String password, Employee employee, Role role){
         UserAccount userAccount = new UserAccount();
         userAccount.setUsername(username);
-        userAccount.setPassword(password);
+        userAccount.isPasswordValid(password);
         userAccount.setEmployee(employee);
         userAccount.setRole(role);
         userAccountList.add(userAccount);
