@@ -2,8 +2,8 @@
 package business.Role;
 
 import business.Business;
-import business.Organization.Organization;
-import business.Organization.PackagingTeamOrganization;
+import business.Enterprise.Enterprise;
+import business.Enterprise.PackagingTeamEnterprise;
 import business.UserAccount.UserAccount;
 import javax.swing.JPanel;
 import ui.PackagingTeam.DeliveryGuyWorkArea;
@@ -20,10 +20,10 @@ public class DeliveryGuy extends Role {
     }
 
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Business business) {
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Enterprise organization, Business business) {
         this.type = Role.RoleType.DeliveryGuy;
         
-        return new DeliveryGuyWorkArea(userProcessContainer, account, (PackagingTeamOrganization) organization, business);
+        return new DeliveryGuyWorkArea(userProcessContainer, account, (PackagingTeamEnterprise) organization, business);
     }
 
 }

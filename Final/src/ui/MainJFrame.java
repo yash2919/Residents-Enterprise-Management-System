@@ -6,7 +6,7 @@ package ui;
 
 import business.Business;
 import business.ConfigureABusiness;
-import business.Organization.Organization;
+import business.Enterprise.Enterprise;
 import business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
