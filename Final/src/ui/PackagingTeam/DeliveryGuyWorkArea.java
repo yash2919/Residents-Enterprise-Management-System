@@ -5,7 +5,7 @@
 package ui.PackagingTeam;
 
 import business.Business;
-import business.Organization.PackagingTeamOrganization;
+import business.Enterprise.PackagingTeamEnterprise;
 import business.UserAccount.UserAccount;
 import javax.swing.JPanel;
 
@@ -18,7 +18,7 @@ public class DeliveryGuyWorkArea extends javax.swing.JPanel {
     /**
      * Creates new form DeliveryGuyWorkArea
      */
-    public DeliveryGuyWorkArea(JPanel userProcessContainer, UserAccount account, PackagingTeamOrganization par, Business business) {
+    public DeliveryGuyWorkArea(JPanel userProcessContainer, UserAccount account, PackagingTeamEnterprise par, Business business) {
         initComponents();
     }
 

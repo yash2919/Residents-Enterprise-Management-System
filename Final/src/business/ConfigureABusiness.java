@@ -1,14 +1,14 @@
 
 package business;
 
-import business.Employee.Employee;
-import business.Organization.AdminOrganization;
+import business.Organisation.Organisation;
+import business.Enterprise.AdminOrganization;
 import business.Role.AdminRole;
 import business.UserAccount.UserAccount;
-import business.Organization.BuildingTeamOrganization;
-import business.Organization.MaintenanceTeamOrganization;
-import business.Organization.PackagingTeamOrganization;
-import business.Organization.PestControlOrganization;
+import business.Enterprise.BuildingTeamEnterprise;
+import business.Enterprise.MaintenanceTeamEnterprise;
+import business.Enterprise.PackagingTeamEnterprise;
+import business.Enterprise.PestControlEnterprise;
 import business.Role.CleaningRole;
 import business.Role.ConciergeRole;
 import business.Role.DeliveryGuy;
@@ -34,26 +34,26 @@ public class ConfigureABusiness {
         AdminOrganization adminOrganization = new AdminOrganization();
         business.getOrganizationDirectory().getOrganizationList().add(adminOrganization);
         
-        Employee employee = new Employee();
-        employee.setName("Team Titans");
+        Organisation organisation = new Organisation();
+        organisation.setName("Team Titans");
         
         UserAccount account = new UserAccount();
         account.setUsername("admin");
         account.isPasswordValid("admin");
         account.setRole(new AdminRole());
-        account.setEmployee(employee);
+        account.setEmployee(organisation);
         
-        adminOrganization.getEmployeeDirectory().getEmployeeList().add(employee);
+        adminOrganization.getOrganisationDirectory().getOrganisationList().add(organisation);
         adminOrganization.getUserAccountDirectory().getUserAccountList().add(account);
         // Creating a new Building Organisation and Users
         
         
         
-        BuildingTeamOrganization buildingOrg= new BuildingTeamOrganization();
+        BuildingTeamEnterprise buildingOrg= new BuildingTeamEnterprise();
         business.getOrganizationDirectory().getOrganizationList().add(buildingOrg);
-        Employee employee2 = new Employee();
+        Organisation employee2 = new Organisation();
         employee2.setName("Building Employer");
-        buildingOrg.getEmployeeDirectory().getEmployeeList().add(employee2);
+        buildingOrg.getOrganisationDirectory().getOrganisationList().add(employee2);
         buildingOrg.getUserAccountDirectory().createUserAccount("Build1","Build1",employee2,new LeasingTeam());         
         buildingOrg.getUserAccountDirectory().createUserAccount("Build2","Build2",employee2,new LeasingTeam());
         buildingOrg.getUserAccountDirectory().createUserAccount("Build3","Build3",employee2,new LeasingTeam());
@@ -69,11 +69,11 @@ public class ConfigureABusiness {
         
         // Creating a new Pest Control and Users
         
-        PestControlOrganization pestControl=new PestControlOrganization();
+        PestControlEnterprise pestControl=new PestControlEnterprise();
         business.getOrganizationDirectory().getOrganizationList().add(pestControl);
-        Employee employee3 = new Employee();
+        Organisation employee3 = new Organisation();
         employee3.setName("Pest Control Employer");
-        pestControl.getEmployeeDirectory().getEmployeeList().add(employee3);
+        pestControl.getOrganisationDirectory().getOrganisationList().add(employee3);
         pestControl.getUserAccountDirectory().createUserAccount("Pest1","Pest1",employee3,new InsectisidesTeamRole());
         pestControl.getUserAccountDirectory().createUserAccount("Pest2","Pest2",employee3,new InsectisidesTeamRole()); 
         pestControl.getUserAccountDirectory().createUserAccount("Pest3","Pest3",employee3,new InsectisidesTeamRole()); 
@@ -89,11 +89,11 @@ public class ConfigureABusiness {
         
         
         
-        MaintenanceTeamOrganization maintenance=new MaintenanceTeamOrganization();
+        MaintenanceTeamEnterprise maintenance=new MaintenanceTeamEnterprise();
         business.getOrganizationDirectory().getOrganizationList().add(maintenance);
-        Employee employee4 = new Employee();
+        Organisation employee4 = new Organisation();
         employee4.setName("Maintenance Employer");
-        maintenance.getEmployeeDirectory().getEmployeeList().add(employee4);
+        maintenance.getOrganisationDirectory().getOrganisationList().add(employee4);
         maintenance.getUserAccountDirectory().createUserAccount("Main1","Main1",employee4,new ElectricianTeamRole());
         maintenance.getUserAccountDirectory().createUserAccount("Main2","Main2",employee4,new ElectricianTeamRole());
         maintenance.getUserAccountDirectory().createUserAccount("Main3","Main3",employee4,new ElectricianTeamRole());
@@ -109,11 +109,11 @@ public class ConfigureABusiness {
         
         // Creating PackagingTeamOrganization and users
         
-        PackagingTeamOrganization packingTeam = new PackagingTeamOrganization();
+        PackagingTeamEnterprise packingTeam = new PackagingTeamEnterprise();
         business.getOrganizationDirectory().getOrganizationList().add(packingTeam);
-        Employee employee5 = new Employee();
+        Organisation employee5 = new Organisation();
         employee5.setName("Maintenance Employer");
-        packingTeam.getEmployeeDirectory().getEmployeeList().add(employee5);
+        packingTeam.getOrganisationDirectory().getOrganisationList().add(employee5);
         packingTeam.getUserAccountDirectory().createUserAccount("Elec1","Elec1",employee5,new Supervisor());
         packingTeam.getUserAccountDirectory().createUserAccount("Elec2","Elec2",employee5,new Supervisor());
         packingTeam.getUserAccountDirectory().createUserAccount("Elec3","Elec3",employee5,new Supervisor());

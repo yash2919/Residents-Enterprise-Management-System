@@ -2,7 +2,7 @@
 package ui;
 
 import business.Business;
-import business.Organization.Organization;
+import business.Enterprise.Enterprise;
 import business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
@@ -15,14 +15,14 @@ public class MainScreen extends javax.swing.JPanel {
 
     JPanel mainWorkArea;
     UserAccount userAccount;
-    Organization organization;
+    Enterprise organization;
     Business business;
     
     
     /**
      * Creates new form MainScreen
      */
-    public MainScreen(JPanel mainWorkArea, UserAccount userAccount, Organization organization, Business business){
+    public MainScreen(JPanel mainWorkArea, UserAccount userAccount, Enterprise organization, Business business){
         initComponents();
         this.mainWorkArea = mainWorkArea;
         this.userAccount = userAccount;

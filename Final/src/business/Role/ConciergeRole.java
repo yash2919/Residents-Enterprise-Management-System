@@ -1,8 +1,8 @@
 package business.Role;
 
 import business.Business;
-import business.Organization.BuildingTeamOrganization;
-import business.Organization.Organization;
+import business.Enterprise.BuildingTeamEnterprise;
+import business.Enterprise.Enterprise;
 import business.UserAccount.UserAccount;
 import javax.swing.JPanel;
 import ui.BuildingTeam.ConciergeWorkArea;
@@ -14,9 +14,9 @@ public class ConciergeRole extends Role {
     }
 
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Business business) {
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Enterprise organization, Business business) {
         this.type = Role.RoleType.Concierge;
-        return new ConciergeWorkArea(userProcessContainer, account, (BuildingTeamOrganization) organization, business);
+        return new ConciergeWorkArea(userProcessContainer, account, (BuildingTeamEnterprise) organization, business);
     }
 
 }

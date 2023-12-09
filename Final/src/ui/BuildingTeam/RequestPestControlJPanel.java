@@ -5,8 +5,8 @@
 package ui.BuildingTeam;
 
 import business.Business;
-import business.Organization.PestControlOrganization;
-import business.Organization.Organization;
+import business.Enterprise.PestControlEnterprise;
+import business.Enterprise.Enterprise;
 import business.UserAccount.UserAccount;
 import business.WorkQueue.LabTestWorkRequest;
 import java.awt.CardLayout;
