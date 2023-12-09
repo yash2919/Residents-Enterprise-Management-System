@@ -6,7 +6,7 @@
 package ui;
 
 import business.Business;
-import business.Organization.Organization;
+import business.Enterprise.Enterprise;
 import business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
@@ -163,7 +163,7 @@ public class LoginScreen extends javax.swing.JPanel {
         boolean flag = false;
 
         UserAccount userAccount = null;
-        for (Organization organization : business.getOrganizationDirectory().getOrganizationList()){
+        for (Enterprise organization : business.getOrganizationDirectory().getOrganizationList()){
             userAccount = organization.getUserAccountDirectory().authenticateUser(userName, password);
             if (userAccount != null){
                 

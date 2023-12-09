@@ -1,7 +1,7 @@
 
 package business.UserAccount;
 
-import business.Employee.Employee;
+import business.Organisation.Organisation;
 import business.Role.Role;
 import business.WorkQueue.WorkQueue;
 import java.security.MessageDigest;
@@ -16,7 +16,9 @@ public class UserAccount {
     
     private String username;
 //    private String password;
-    private Employee employee;
+
+    private Organisation employee;
+
     private Role role;
     private WorkQueue workQueue;
     private ArrayList<String> historyPass;
@@ -47,7 +49,7 @@ public class UserAccount {
         return role;
     }
 
-    public void setEmployee(Employee employee) {
+    public void setEmployee(Organisation employee) {
         this.employee = employee;
     }
 
@@ -55,7 +57,7 @@ public class UserAccount {
         this.role = role;
     }
 
-    public Employee getEmployee() {
+    public Organisation getEmployee() {
         return employee;
     }
 

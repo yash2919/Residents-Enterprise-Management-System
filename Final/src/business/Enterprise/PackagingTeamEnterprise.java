@@ -1,5 +1,5 @@
 
-package business.Organization;
+package business.Enterprise;
 
 
 import business.Role.DeliveryGuy;
@@ -12,10 +12,10 @@ import java.util.ArrayList;
  *
  * 
  */
-public class PackagingTeamOrganization extends Organization{
+public class PackagingTeamEnterprise extends Enterprise{
 
-    public PackagingTeamOrganization() {
-        super(Organization.Type.Packaging_Team.getValue());
+    public PackagingTeamEnterprise() {
+        super(Enterprise.Type.Packaging_Team.getValue());
     }
 
     @Override

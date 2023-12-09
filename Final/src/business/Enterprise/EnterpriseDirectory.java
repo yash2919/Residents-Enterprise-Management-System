@@ -2,9 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package business.Organization;
+package business.Enterprise;
 
-import business.Organization.Organization.Type;
+import business.Enterprise.Enterprise.Type;
 import business.Role.ElectricianTeamRole;
 import business.Role.Supervisor;
 import java.util.ArrayList;
@@ -13,34 +13,34 @@ import java.util.ArrayList;
  *
  * 
  */
-public class OrganizationDirectory {
+public class EnterpriseDirectory {
     
-    private ArrayList<Organization> organizationList;
+    private ArrayList<Enterprise> organizationList;
 
-    public OrganizationDirectory() {
+    public EnterpriseDirectory() {
         organizationList = new ArrayList<>();
     }
 
-    public ArrayList<Organization> getOrganizationList() {
+    public ArrayList<Enterprise> getOrganizationList() {
         return organizationList;
     }
     
-    public Organization createOrganization(Type type){
-        Organization organization = null;
+    public Enterprise createOrganization(Type type){
+        Enterprise organization = null;
         if (type.getValue().equals(Type.Building_Team.getValue())){
-            organization = new BuildingTeamOrganization();
+            organization = new BuildingTeamEnterprise();
             organizationList.add(organization);
         }
         else if (type.getValue().equals(Type.Pest_Control_Organisation.getValue())){
-            organization = new PestControlOrganization();
+            organization = new PestControlEnterprise();
             organizationList.add(organization);
         }
          else if (type.getValue().equals(Type.Maintenance_Team.getValue())){
-            organization = new MaintenanceTeamOrganization();
+            organization = new MaintenanceTeamEnterprise();
             organizationList.add(organization);
         }
          else if (type.getValue().equals(Type.Packaging_Team.getValue())){
-            organization = new PackagingTeamOrganization();
+            organization = new PackagingTeamEnterprise();
             organizationList.add(organization);
         }
         return organization;

@@ -4,9 +4,9 @@
  */
 package ui.AdministrativeRole;
 
-import business.Employee.Employee;
-import business.Organization.Organization;
-import business.Organization.OrganizationDirectory;
+import business.Organisation.Organisation;
+import business.Enterprise.Enterprise;
+import business.Enterprise.EnterpriseDirectory;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -16,15 +16,15 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author raunak
  */
-public class ManageEmployeeJPanel extends javax.swing.JPanel {
+public class ManageOrganisationJPanel extends javax.swing.JPanel {
 
-    private OrganizationDirectory organizationDir;
+    private EnterpriseDirectory organizationDir;
     private JPanel userProcessContainer;
     
     /**
      * Creates new form ManageOrganizationJPanel
      */
-    public ManageEmployeeJPanel(JPanel userProcessContainer,OrganizationDirectory organizationDir) {
+    public ManageOrganisationJPanel(JPanel userProcessContainer,EnterpriseDirectory organizationDir) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.organizationDir = organizationDir;
@@ -35,17 +35,17 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
     public void populateOrganizationComboBox(){
         cmbOrganizationList.removeAllItems();
         
-        for (Organization organization : organizationDir.getOrganizationList()){
+        for (Enterprise organization : organizationDir.getOrganizationList()){
             cmbOrganizationList.addItem(organization);
         }
     }
     
-      private void populateTable(Organization organization){
+      private void populateTable(Enterprise organization){
         DefaultTableModel model = (DefaultTableModel) tblEmployees.getModel();
         
         model.setRowCount(0);
         
-        for (Employee employee : organization.getEmployeeDirectory().getEmployeeList()){
+        for (Organisation employee : organization.getOrganisationDirectory().getOrganisationList()){
             Object[] row = new Object[2];
             row[0] = employee.getId();
             row[1] = employee.getName();
@@ -77,7 +77,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
 
         lblTitle.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitle.setText("MANAGE EMPLOYEES");
+        lblTitle.setText("MANAGE ORGANISATION");
         lblTitle.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         btnBack.setBackground(new java.awt.Color(255, 204, 204));
@@ -88,7 +88,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
             }
         });
 
-        lblOrganizationPicker.setText("Select Organization:");
+        lblOrganizationPicker.setText("Select Enterprise :");
 
         cmbOrganizationList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cmbOrganizationList.addActionListener(new java.awt.event.ActionListener() {
@@ -131,15 +131,15 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         }
 
         lblEmployeeList.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        lblEmployeeList.setText("Employee List:");
+        lblEmployeeList.setText("Organisation List:");
 
         lblOrganizationList1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        lblOrganizationList1.setText("New Employee:");
+        lblOrganizationList1.setText("New Organisation :");
 
         lblEmployeeName.setText("Name:");
 
         btnCreateEmployee.setBackground(new java.awt.Color(204, 255, 204));
-        btnCreateEmployee.setText("Create Employee");
+        btnCreateEmployee.setText("Create Organisation");
         btnCreateEmployee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCreateEmployeeActionPerformed(evt);
@@ -170,7 +170,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                             .addComponent(btnCreateEmployee)
                             .addComponent(txtEmployeeName, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(42, 42, 42)))
-                .addContainerGap(213, Short.MAX_VALUE))
+                .addContainerGap(222, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -205,7 +205,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
 
     private void btnCreateEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateEmployeeActionPerformed
         
-        Organization organization = (Organization) cmbOrganizationList.getSelectedItem();
+        Enterprise organization = (Enterprise) cmbOrganizationList.getSelectedItem();
         String name = txtEmployeeName.getText();
         
         if (name.isEmpty()) {
@@ -213,7 +213,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
             return;
         }
         
-        organization.getEmployeeDirectory().createEmployee(name);
+        organization.getOrganisationDirectory().createEmployee(name);
         txtEmployeeName.setText("");
         populateTable(organization);
         
@@ -227,7 +227,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void cmbOrganizationListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbOrganizationListActionPerformed
-        Organization organization = (Organization) cmbOrganizationList.getSelectedItem();
+        Enterprise organization = (Enterprise) cmbOrganizationList.getSelectedItem();
         if (organization != null){
             populateTable(organization);
         }

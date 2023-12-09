@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package business.Organization;
+package business.Enterprise;
 
 import business.Role.InsectisidesTeamRole;
 import business.Role.MicrobialTeamRole;
@@ -14,10 +14,10 @@ import java.util.ArrayList;
  *
  * @author raunak
  */
-public class PestControlOrganization extends Organization{
+public class PestControlEnterprise extends Enterprise{
 
-    public PestControlOrganization() {
-        super(Organization.Type.Pest_Control_Organisation.getValue());
+    public PestControlEnterprise() {
+        super(Enterprise.Type.Pest_Control_Organisation.getValue());
     }
 
     @Override

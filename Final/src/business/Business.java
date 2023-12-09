@@ -1,7 +1,7 @@
 
 package business;
 
-import business.Organization.OrganizationDirectory;
+import business.Enterprise.EnterpriseDirectory;
 
 /**
  *
@@ -10,7 +10,7 @@ import business.Organization.OrganizationDirectory;
 public class Business {
 
     private static Business business;
-    private OrganizationDirectory organizationDirectory;
+    private EnterpriseDirectory organizationDirectory;
 
     public static Business getInstance() {
         if (business == null) {
@@ -20,10 +20,10 @@ public class Business {
     }
 
     private Business() {
-        organizationDirectory = new OrganizationDirectory();
+        organizationDirectory = new EnterpriseDirectory();
     }
 
-    public OrganizationDirectory getOrganizationDirectory() {
+    public EnterpriseDirectory getOrganizationDirectory() {
         return organizationDirectory;
     }
 }

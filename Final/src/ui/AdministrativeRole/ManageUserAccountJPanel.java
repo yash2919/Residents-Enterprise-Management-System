@@ -5,8 +5,8 @@
 package ui.AdministrativeRole;
 
 import business.Business;
-import business.Employee.Employee;
-import business.Organization.Organization;
+import business.Organisation.Organisation;
+import business.Enterprise.Enterprise;
 import business.Role.Role;
 import business.UserAccount.UserAccount;
 import java.awt.CardLayout;
@@ -33,7 +33,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
 
         popOrganizationComboBox();
         users();
-        Organization organization = (Organization) cmbOrganization.getSelectedItem();
+        Enterprise organization = (Enterprise) cmbOrganization.getSelectedItem();
         if (organization != null) {
             populateEmployeeComboBox(organization);
             populateRoleComboBox(organization);
@@ -45,22 +45,22 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     public void popOrganizationComboBox() {
         cmbOrganization.removeAllItems();
 
-        for (Organization organization : business.getOrganizationDirectory().getOrganizationList()) {
+        for (Enterprise organization : business.getOrganizationDirectory().getOrganizationList()) {
             cmbOrganization.addItem(organization);
         }
     }
 
-    public void populateEmployeeComboBox(Organization organization) {
+    public void populateEmployeeComboBox(Enterprise organization) {
         cmbEmployee.removeAllItems();
 
-        for (Employee employee : organization.getEmployeeDirectory().getEmployeeList()) {
+        for (Organisation employee : organization.getOrganisationDirectory().getOrganisationList()) {
             cmbEmployee.addItem(employee);
         }
     }
     
     
 
-    private void populateRoleComboBox(Organization organization) {
+    private void populateRoleComboBox(Enterprise organization) {
         cmbRoles.removeAllItems();
         for (Role role : organization.getSupportedRole()) {
             cmbRoles.addItem(role);
@@ -72,7 +72,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
 
     model.setRowCount(0);
 
-    for (Organization organization : business.getOrganizationDirectory().getOrganizationList()) {
+    for (Enterprise organization : business.getOrganizationDirectory().getOrganizationList()) {
         for (UserAccount ua : organization.getUserAccountDirectory().getUserAccountList()) {
             Object row[] = new Object[3]; // Increase the size of the array to accommodate Organization ID
             row[0] = ua;
@@ -83,7 +83,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     }
 }
    public void users(){
-       Organization organization = (Organization) cmbOrganization.getSelectedItem();
+       Enterprise organization = (Enterprise) cmbOrganization.getSelectedItem();
    }
 
 
@@ -162,7 +162,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
 
         lblPassword.setText("Password:");
 
-        lblEmployee.setText("Employee:");
+        lblEmployee.setText("Organisation:");
 
         cmbEmployee.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cmbEmployee.addActionListener(new java.awt.event.ActionListener() {
@@ -171,7 +171,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
             }
         });
 
-        lblOrganization.setText("Organization:");
+        lblOrganization.setText("Enterprise :");
 
         cmbOrganization.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cmbOrganization.addActionListener(new java.awt.event.ActionListener() {
@@ -321,8 +321,8 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     private void btnCreateUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateUserActionPerformed
         String userName = txtUserName.getText();
         String password = txtPassword.getText();
-        Organization organization = (Organization) cmbOrganization.getSelectedItem();
-        Employee employee = (Employee) cmbEmployee.getSelectedItem();
+        Enterprise organization = (Enterprise) cmbOrganization.getSelectedItem();
+        Organisation employee = (Organisation) cmbEmployee.getSelectedItem();
         Role role = (Role) cmbRoles.getSelectedItem();
         System.out.println("This is the data from Creating a new user"+ cmbEmployee.getSelectedItem());
         organization.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
@@ -342,7 +342,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void cmbOrganizationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbOrganizationActionPerformed
-        Organization organization = (Organization) cmbOrganization.getSelectedItem();
+        Enterprise organization = (Enterprise) cmbOrganization.getSelectedItem();
         if (organization != null) {
             populateEmployeeComboBox(organization);
             populateRoleComboBox(organization);

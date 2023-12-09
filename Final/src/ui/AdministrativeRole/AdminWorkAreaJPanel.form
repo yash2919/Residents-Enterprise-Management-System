@@ -31,7 +31,8 @@
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="manageOrganizationJButton" linkSize="2" alignment="0" pref="196" max="32767" attributes="0"/>
                   <Component id="manageEmployeeJButton" linkSize="2" alignment="0" max="32767" attributes="0"/>
-                  <Component id="userJButton" linkSize="2" alignment="0" min="-2" pref="165" max="-2" attributes="0"/>
+                  <Component id="userJButton" linkSize="2" alignment="0" pref="165" max="32767" attributes="0"/>
+                  <Component id="analyticsJPanel" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="200" max="32767" attributes="0"/>
           </Group>
@@ -48,7 +49,9 @@
               <Component id="manageEmployeeJButton" linkSize="3" min="-2" pref="49" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="userJButton" linkSize="3" min="-2" pref="50" max="-2" attributes="0"/>
-              <EmptySpace pref="123" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="analyticsJPanel" min="-2" pref="50" max="-2" attributes="0"/>
+              <EmptySpace pref="55" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -70,7 +73,7 @@
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="cc" green="cc" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Manage Employees"/>
+        <Property name="text" type="java.lang.String" value="Manage Organisation"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="manageEmployeeJButtonActionPerformed"/>
@@ -81,7 +84,7 @@
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="cc" green="ff" red="99" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Manage Organizations"/>
+        <Property name="text" type="java.lang.String" value="Manage Enterprises"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="manageOrganizationJButtonActionPerformed"/>
@@ -103,6 +106,17 @@
           </Border>
         </Property>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="analyticsJPanel">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="cc" red="99" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Analytics"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="analyticsJPanelActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

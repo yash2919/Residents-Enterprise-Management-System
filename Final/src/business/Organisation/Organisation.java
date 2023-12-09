@@ -2,20 +2,20 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package business.Employee;
+package business.Organisation;
 
 /**
  * 
  *
  * 
  */
-public class Employee {
+public class Organisation {
     
     private String name;
     private int id;
     private static int count = 1;
 
-    public Employee() {
+    public Organisation() {
         id = count;
         count++;
     }

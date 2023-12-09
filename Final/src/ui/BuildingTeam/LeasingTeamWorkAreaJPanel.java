@@ -5,7 +5,7 @@
 package ui.BuildingTeam;
 
 import business.Business;
-import business.Organization.BuildingTeamOrganization;
+import business.Enterprise.BuildingTeamEnterprise;
 import business.UserAccount.UserAccount;
 import business.WorkQueue.LabTestWorkRequest;
 import business.WorkQueue.WorkRequest;
@@ -20,13 +20,13 @@ import javax.swing.table.DefaultTableModel;
 public class LeasingTeamWorkAreaJPanel extends javax.swing.JPanel {
 
     private JPanel workArea;
-    private BuildingTeamOrganization organization;
+    private BuildingTeamEnterprise organization;
     private Business business;
     private UserAccount userAccount;
     /**
      * Creates new form DoctorWorkAreaJPanel
      */
-    public LeasingTeamWorkAreaJPanel(JPanel workArea, UserAccount account, BuildingTeamOrganization organization, Business business) {
+    public LeasingTeamWorkAreaJPanel(JPanel workArea, UserAccount account, BuildingTeamEnterprise organization, Business business) {
         initComponents();
         
         this.workArea = workArea;

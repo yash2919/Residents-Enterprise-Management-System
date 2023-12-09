@@ -5,8 +5,8 @@
 package ui.PestControlTeam;
 
 import business.Business;
-import business.Organization.PestControlOrganization;
-import business.Organization.Organization;
+import business.Enterprise.PestControlEnterprise;
+import business.Enterprise.Enterprise;
 import business.UserAccount.UserAccount;
 import business.WorkQueue.LabTestWorkRequest;
 import business.WorkQueue.WorkRequest;
@@ -24,18 +24,18 @@ public class InsectisidesTeamWorkArea extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private Business business;
     private UserAccount userAccount;
-    private PestControlOrganization pestOrganization;
+    private PestControlEnterprise pestOrganization;
 
     /**
      * Creates new form LabAssistantWorkAreaJPanel
      */
-    public InsectisidesTeamWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Business business) {
+    public InsectisidesTeamWorkArea(JPanel userProcessContainer, UserAccount account, Enterprise organization, Business business) {
         initComponents();
 
         this.userProcessContainer = userProcessContainer;
         this.userAccount = account;
         this.business = business;
-        this.pestOrganization = (PestControlOrganization) organization;
+        this.pestOrganization = (PestControlEnterprise) organization;
 
        
     }
