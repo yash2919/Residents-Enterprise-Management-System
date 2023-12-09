@@ -122,52 +122,8 @@ public class ConfigureABusiness {
        packingTeam.getUserAccountDirectory().createUserAccount("Elec4","Elec4",employee5,new DeliveryGuy());
        packingTeam.getUserAccountDirectory().createUserAccount("Elec5","Elec5",employee5,new DeliveryGuy());
        packingTeam.getUserAccountDirectory().createUserAccount("Elec6","Elec6",employee5,new DeliveryGuy());
-       
-        
-        
-        
-        
-        
-        
-        
-         
-        
-        
-        
-        
-        
-        
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-        
-         
-         
-         
-         
-         
-         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        return business;
+            
+    return business;
     }
     
 }
