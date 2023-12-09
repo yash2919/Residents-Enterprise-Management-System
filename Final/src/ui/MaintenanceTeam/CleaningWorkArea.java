@@ -5,7 +5,7 @@
 package ui.MaintenanceTeam;
 
 import business.Business;
-import business.Organization.MaintenanceTeamOrganization;
+import business.Enterprise.MaintenanceTeamEnterprise;
 import business.UserAccount.UserAccount;
 import javax.swing.JPanel;
 
@@ -18,7 +18,7 @@ public class CleaningWorkArea extends javax.swing.JPanel {
     /**
      * Creates new form CleaningWorkArea
      */
-    public CleaningWorkArea(JPanel userProcessContainer, UserAccount account, MaintenanceTeamOrganization par, Business business) {
+    public CleaningWorkArea(JPanel userProcessContainer, UserAccount account, MaintenanceTeamEnterprise par, Business business) {
         initComponents();
     }
 

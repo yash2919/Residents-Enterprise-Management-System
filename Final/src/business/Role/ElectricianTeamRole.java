@@ -2,8 +2,8 @@
 package business.Role;
 
 import business.Business;
-import business.Organization.MaintenanceTeamOrganization;
-import business.Organization.Organization;
+import business.Enterprise.MaintenanceTeamEnterprise;
+import business.Enterprise.Enterprise;
 import business.UserAccount.UserAccount;
 import javax.swing.JPanel;
 import ui.MaintenanceTeam.ElectricianWorkArea;
@@ -19,9 +19,9 @@ public class ElectricianTeamRole extends Role {
     }
 
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Business business) {
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Enterprise organization, Business business) {
         this.type = Role.RoleType.Electrician;
-        return new ElectricianWorkArea(userProcessContainer, account, (MaintenanceTeamOrganization) organization, business);
+        return new ElectricianWorkArea(userProcessContainer, account, (MaintenanceTeamEnterprise) organization, business);
     }
 
 }

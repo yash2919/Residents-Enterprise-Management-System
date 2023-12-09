@@ -50,7 +50,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         });
 
         manageEmployeeJButton.setBackground(new java.awt.Color(255, 204, 204));
-        manageEmployeeJButton.setText("Manage Employees");
+        manageEmployeeJButton.setText("Manage Organisation");
         manageEmployeeJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageEmployeeJButtonActionPerformed(evt);
@@ -58,7 +58,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         });
 
         manageOrganizationJButton.setBackground(new java.awt.Color(153, 255, 204));
-        manageOrganizationJButton.setText("Manage Organizations");
+        manageOrganizationJButton.setText("Manage Enterprises");
         manageOrganizationJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageOrganizationJButtonActionPerformed(evt);
@@ -130,7 +130,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
 
     private void manageEmployeeJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageEmployeeJButtonActionPerformed
 
-        ManageEmployeeJPanel manageEmployeeJPanel = new ManageEmployeeJPanel(userProcessContainer, business.getOrganizationDirectory());
+        ManageOrganisationJPanel manageEmployeeJPanel = new ManageOrganisationJPanel(userProcessContainer, business.getOrganizationDirectory());
         userProcessContainer.add("manageEmployeeJPanel", manageEmployeeJPanel);
 
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
@@ -140,7 +140,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
 
     private void manageOrganizationJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageOrganizationJButtonActionPerformed
 
-        ManageOrganizationJPanel manageOrganizationJPanel = new ManageOrganizationJPanel(userProcessContainer, business.getOrganizationDirectory());
+        ManageEnterpriseJPanel manageOrganizationJPanel = new ManageEnterpriseJPanel(userProcessContainer, business.getOrganizationDirectory());
         userProcessContainer.add("manageOrganizationJPanel", manageOrganizationJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);

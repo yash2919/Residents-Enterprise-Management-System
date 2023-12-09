@@ -5,7 +5,7 @@
 package ui.BuildingTeam;
 
 import business.Business;
-import business.Organization.BuildingTeamOrganization;
+import business.Enterprise.BuildingTeamEnterprise;
 import business.UserAccount.UserAccount;
 import javax.swing.JPanel;
 
@@ -18,7 +18,7 @@ public class ResidentWorkArea extends javax.swing.JPanel {
     /**
      * Creates new form ResidentWorkArea
      */
-    public ResidentWorkArea(JPanel userProcessContainer, UserAccount account, BuildingTeamOrganization par, Business business) {
+    public ResidentWorkArea(JPanel userProcessContainer, UserAccount account, BuildingTeamEnterprise par, Business business) {
         initComponents();
     }
 

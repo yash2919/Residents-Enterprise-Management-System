@@ -5,7 +5,7 @@
 package ui.PestControlTeam;
 
 import business.Business;
-import business.Organization.Organization;
+import business.Enterprise.Enterprise;
 import business.UserAccount.UserAccount;
 import javax.swing.JPanel;
 
@@ -18,7 +18,7 @@ public class MiticidesTeamWorkArea extends javax.swing.JPanel {
     /**
      * Creates new form MiticidesTeamWorkArea
      */
-    public MiticidesTeamWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Business business) {
+    public MiticidesTeamWorkArea(JPanel userProcessContainer, UserAccount account, Enterprise organization, Business business) {
         initComponents();
     }
 

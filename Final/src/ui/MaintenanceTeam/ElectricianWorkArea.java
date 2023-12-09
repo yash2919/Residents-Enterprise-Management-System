@@ -5,7 +5,7 @@
 package ui.MaintenanceTeam;
 
 import business.Business;
-import business.Organization.MaintenanceTeamOrganization;
+import business.Enterprise.MaintenanceTeamEnterprise;
 import business.UserAccount.UserAccount;
 import javax.swing.JPanel;
 
@@ -16,11 +16,11 @@ import javax.swing.JPanel;
 public class ElectricianWorkArea extends javax.swing.JPanel {
 
     private JPanel workArea;
-    private MaintenanceTeamOrganization organization;
+    private MaintenanceTeamEnterprise organization;
     private Business business;
     private UserAccount userAccount;
     
-    public ElectricianWorkArea(JPanel userProcessContainer, UserAccount account, MaintenanceTeamOrganization organization, Business business) {
+    public ElectricianWorkArea(JPanel userProcessContainer, UserAccount account, MaintenanceTeamEnterprise organization, Business business) {
         initComponents();
          this.workArea = workArea;
         this.organization = organization;

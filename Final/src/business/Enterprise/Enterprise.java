@@ -1,7 +1,7 @@
 
-package business.Organization;
+package business.Enterprise;
 
-import business.Employee.EmployeeDirectory;
+import business.Organisation.OrganisationDirectory;
 import business.Role.Role;
 import business.UserAccount.UserAccountDirectory;
 import business.WorkQueue.WorkQueue;
@@ -11,29 +11,29 @@ import java.util.ArrayList;
  *
  * 
  */
-public abstract class Organization {
+public abstract class Enterprise {
 
     private String name;
     private WorkQueue workQueue;
-    private EmployeeDirectory employeeDirectory;
+    private OrganisationDirectory organisationDirectory;
     private UserAccountDirectory userAccountDirectory;
     private int organizationID;
     private static int counter;
     
     public enum Type{
-        Admin("Admin Organization") {
+        Admin("Admin Enterprise") {
 
         },
-        Building_Team("Building Organization"){
+        Building_Team("Building Enterprise"){
 
         },
-        Pest_Control_Organisation("Pest Organization"){
+        Pest_Control_Organisation("Pest Enterprise"){
 
         },
-         Maintenance_Team("Maintainence Organization"){
+         Maintenance_Team("Maintainence Enterprise"){
 
         },
-         Packaging_Team("Packaging Organization"){
+         Packaging_Team("Packaging Enterprise"){
 
         };
         private String value;
@@ -46,10 +46,10 @@ public abstract class Organization {
 
     }
 
-    public Organization(String name) {
+    public Enterprise(String name) {
         this.name = name;
         workQueue = new WorkQueue();
-        employeeDirectory = new EmployeeDirectory();
+        organisationDirectory = new OrganisationDirectory();
         userAccountDirectory = new UserAccountDirectory();
         organizationID = counter;
         ++counter;
@@ -65,8 +65,8 @@ public abstract class Organization {
         return organizationID;
     }
 
-    public EmployeeDirectory getEmployeeDirectory() {
-        return employeeDirectory;
+    public OrganisationDirectory getOrganisationDirectory() {
+        return organisationDirectory;
     }
     
     public String getName() {

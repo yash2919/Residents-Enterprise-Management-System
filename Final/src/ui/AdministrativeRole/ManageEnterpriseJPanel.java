@@ -4,9 +4,9 @@
  */
 package ui.AdministrativeRole;
 
-import business.Organization.Organization;
-import business.Organization.Organization.Type;
-import business.Organization.OrganizationDirectory;
+import business.Enterprise.Enterprise;
+import business.Enterprise.Enterprise.Type;
+import business.Enterprise.EnterpriseDirectory;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -15,15 +15,15 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author raunak
  */
-public class ManageOrganizationJPanel extends javax.swing.JPanel {
+public class ManageEnterpriseJPanel extends javax.swing.JPanel {
 
-    private OrganizationDirectory directory;
+    private EnterpriseDirectory directory;
     private JPanel userProcessContainer;
     
     /**
      * Creates new form ManageOrganizationJPanel
      */
-    public ManageOrganizationJPanel(JPanel userProcessContainer,OrganizationDirectory directory) {
+    public ManageEnterpriseJPanel(JPanel userProcessContainer,EnterpriseDirectory directory) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.directory = directory;
@@ -34,7 +34,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
     
     private void populateCombo(){
         cmbOrganizations.removeAllItems();
-        for (Type type : Organization.Type.values()){
+        for (Type type : Enterprise.Type.values()){
             if (!type.getValue().equals(Type.Admin.getValue()))
                 cmbOrganizations.addItem(type);
         }
@@ -45,7 +45,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         
         model.setRowCount(0);
         
-        for (Organization organization : directory.getOrganizationList()){
+        for (Enterprise organization : directory.getOrganizationList()){
             Object[] row = new Object[2];
             row[0] = organization.getOrganizationID();
             row[1] = organization.getName();
@@ -120,7 +120,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
             }
         });
 
-        lblSelectOrgType.setText("Select Organization Type:");
+        lblSelectOrgType.setText("Select Enterprise Type:");
 
         btnBack.setText("<< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -131,14 +131,14 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
 
         lblTitle.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitle.setText("MANAGE ORGANISATION");
+        lblTitle.setText("MANAGE ENTERPRISE");
         lblTitle.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         lblOrganizationList.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        lblOrganizationList.setText("Organization List:");
+        lblOrganizationList.setText("Enterprise List:");
 
         lblOrganizationAdd.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        lblOrganizationAdd.setText("Add Organization:");
+        lblOrganizationAdd.setText("Add Enterprise :");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

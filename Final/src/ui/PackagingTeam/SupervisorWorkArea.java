@@ -5,7 +5,7 @@
 package ui.PackagingTeam;
 
 import business.Business;
-import business.Organization.PackagingTeamOrganization;
+import business.Enterprise.PackagingTeamEnterprise;
 import business.UserAccount.UserAccount;
 import javax.swing.JPanel;
 
@@ -19,10 +19,10 @@ public class SupervisorWorkArea extends javax.swing.JPanel {
      * Creates new form PackagingTeamWorkAreaJPanel
      */
     private JPanel workArea;
-    private PackagingTeamOrganization organization;
+    private PackagingTeamEnterprise organization;
     private Business business;
     private UserAccount userAccount;
-    public SupervisorWorkArea(JPanel userProcessContainer, UserAccount account, PackagingTeamOrganization oganization, Business business) {
+    public SupervisorWorkArea(JPanel userProcessContainer, UserAccount account, PackagingTeamEnterprise oganization, Business business) {
         initComponents();
         
         this.workArea = workArea;

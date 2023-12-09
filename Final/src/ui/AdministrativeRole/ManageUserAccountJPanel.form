@@ -227,7 +227,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lblEmployee">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Employee:"/>
+            <Property name="text" type="java.lang.String" value="Organisation:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JComboBox" name="cmbEmployee">
@@ -247,7 +247,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lblOrganization">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Organization:"/>
+            <Property name="text" type="java.lang.String" value="Enterprise :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JComboBox" name="cmbOrganization">
