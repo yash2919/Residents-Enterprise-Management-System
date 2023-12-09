@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package business.Role;
 
 import business.Business;
@@ -9,10 +6,6 @@ import business.Organization.Organization;
 import business.UserAccount.UserAccount;
 import javax.swing.JPanel;
 
-/**
- *
- * 
- */
 public abstract class Role {
 
     public enum RoleType {

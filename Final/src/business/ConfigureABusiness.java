@@ -27,7 +27,7 @@ public class ConfigureABusiness {
         
         UserAccount account = new UserAccount();
         account.setUsername("admin");
-        account.setPassword("admin");
+        account.isPasswordValid("admin");
         account.setRole(new AdminRole());
         account.setEmployee(employee);
         
@@ -40,7 +40,7 @@ public class ConfigureABusiness {
         employee2.setName("Building Employer");
          UserAccount account2 = new UserAccount();
          account2.setUsername("Build1");
-         account2.setPassword("Build1");
+         account2.isPasswordValid("Build1");
          account2.setRole(new LeasingTeam());
          account2.setEmployee(employee2);
          buildingOrg.getEmployeeDirectory().getEmployeeList().add(employee2);
@@ -48,13 +48,13 @@ public class ConfigureABusiness {
    
          UserAccount account3 = new UserAccount();
          account3.setUsername("Build2");
-         account3.setPassword("Build2");
+         account3.isPasswordValid("Build2");
          account3.setRole(new LeasingTeam());
          account3.setEmployee(employee2);
          
          UserAccount account4 = new UserAccount();
          account4.setUsername("Build3");
-         account4.setPassword("Build3");
+         account4.isPasswordValid("Build3");
          account4.setRole(new LeasingTeam());
          account4.setEmployee(employee2);
          buildingOrg.getUserAccountDirectory().getUserAccountList().add(account3);
@@ -64,7 +64,7 @@ public class ConfigureABusiness {
          
          UserAccount account5 = new UserAccount();
          account5.setUsername("Build4");
-         account5.setPassword("Build4");
+         account5.isPasswordValid("Build4");
          account5.setRole(new ConciergeRole());
          account5.setEmployee(employee2);
          buildingOrg.getUserAccountDirectory().getUserAccountList().add(account5);
@@ -72,7 +72,7 @@ public class ConfigureABusiness {
          
          UserAccount account6 = new UserAccount();
          account6.setUsername("Build5");
-         account6.setPassword("Build5");
+         account6.isPasswordValid("Build5");
          account6.setRole(new ConciergeRole());
          account6.setEmployee(employee2);
          buildingOrg.getUserAccountDirectory().getUserAccountList().add(account6);
@@ -80,7 +80,7 @@ public class ConfigureABusiness {
          
          UserAccount account7 = new UserAccount();
          account7.setUsername("Build6");
-         account7.setPassword("Build6");
+         account7.isPasswordValid("Build6");
          account7.setRole(new ConciergeRole());
          account7.setEmployee(employee2);
          buildingOrg.getUserAccountDirectory().getUserAccountList().add(account7);
