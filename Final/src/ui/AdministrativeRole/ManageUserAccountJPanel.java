@@ -32,7 +32,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         this.container = container;
 
         popOrganizationComboBox();
-        
+        users();
         Organization organization = (Organization) cmbOrganization.getSelectedItem();
         if (organization != null) {
             populateEmployeeComboBox(organization);
@@ -82,6 +82,9 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         }
     }
 }
+   public void users(){
+       Organization organization = (Organization) cmbOrganization.getSelectedItem();
+   }
 
 
     /**
@@ -321,7 +324,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         Organization organization = (Organization) cmbOrganization.getSelectedItem();
         Employee employee = (Employee) cmbEmployee.getSelectedItem();
         Role role = (Role) cmbRoles.getSelectedItem();
-
+        System.out.println("This is the data from Creating a new user"+ cmbEmployee.getSelectedItem());
         organization.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
 
         popUserAccountsTable();
