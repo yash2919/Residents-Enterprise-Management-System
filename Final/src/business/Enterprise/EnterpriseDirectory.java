@@ -1,3 +1,4 @@
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -5,6 +6,7 @@
 package business.Enterprise;
 
 import business.Enterprise.Enterprise.Type;
+import business.Organisation.OrganisationDirectory;
 import business.Role.ElectricianTeamRole;
 import business.Role.Supervisor;
 import java.util.ArrayList;
@@ -15,34 +17,40 @@ import java.util.ArrayList;
  */
 public class EnterpriseDirectory {
     
-    private ArrayList<Enterprise> organizationList;
+    private ArrayList<Enterprise> EnterpriseList;
+    
+//    private OrganisationDirectory organisationDirectory;
 
     public EnterpriseDirectory() {
-        organizationList = new ArrayList<>();
-    }
-
-    public ArrayList<Enterprise> getOrganizationList() {
-        return organizationList;
+        EnterpriseList = new ArrayList<>();
     }
     
-    public Enterprise createOrganization(Type type){
-        Enterprise organization = null;
+//     public OrganisationDirectory getOrgantisationDirectory() {
+// 
+//        return organisationDirectory;
+//    }
+    public ArrayList<Enterprise> getEnterpriseList() {
+        return EnterpriseList;
+    }
+    
+    public Enterprise createenterprise(Type type){
+        Enterprise Enterprise = null;
         if (type.getValue().equals(Type.Building_Team.getValue())){
-            organization = new BuildingTeamEnterprise();
-            organizationList.add(organization);
+            Enterprise = new BuildingTeamEnterprise();
+            EnterpriseList.add(Enterprise);
         }
         else if (type.getValue().equals(Type.Pest_Control_Organisation.getValue())){
-            organization = new PestControlEnterprise();
-            organizationList.add(organization);
+            Enterprise = new PestControlEnterprise();
+            EnterpriseList.add(Enterprise);
         }
          else if (type.getValue().equals(Type.Maintenance_Team.getValue())){
-            organization = new MaintenanceTeamEnterprise();
-            organizationList.add(organization);
+            Enterprise = new MaintenanceTeamEnterprise();
+            EnterpriseList.add(Enterprise);
         }
          else if (type.getValue().equals(Type.Packaging_Team.getValue())){
-            organization = new PackagingTeamEnterprise();
-            organizationList.add(organization);
+            Enterprise = new PackagingTeamEnterprise();
+            EnterpriseList.add(Enterprise);
         }
-        return organization;
+        return Enterprise;
     }
 }

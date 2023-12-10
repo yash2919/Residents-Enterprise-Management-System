@@ -7,7 +7,9 @@ package ui.MaintenanceTeam;
 import business.Business;
 import business.Enterprise.MaintenanceTeamEnterprise;
 import business.UserAccount.UserAccount;
+import business.WorkQueue.WorkRequest;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -18,8 +20,25 @@ public class CleaningWorkArea extends javax.swing.JPanel {
     /**
      * Creates new form CleaningWorkArea
      */
+            JPanel userProcessContainer;
+UserAccount account;
+MaintenanceTeamEnterprise par;
+Business business;
     public CleaningWorkArea(JPanel userProcessContainer, UserAccount account, MaintenanceTeamEnterprise par, Business business) {
+        
+        
+        
         initComponents();
+        
+        this.userProcessContainer=userProcessContainer;
+        this.account=account;
+        this.par=par;
+        this.business=business;
+        show();
+        populateTable();
+    }
+    public void show(){
+        System.out.println(par.getWorkQueue().getWorkRequestList()+"hbhb");
     }
 
     /**
@@ -35,7 +54,7 @@ public class CleaningWorkArea extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        cleaning = new javax.swing.JTable();
         btnRefresh = new javax.swing.JButton();
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -47,7 +66,7 @@ public class CleaningWorkArea extends javax.swing.JPanel {
 
         jButton2.setText("Assign to me");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        cleaning.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -58,7 +77,7 @@ public class CleaningWorkArea extends javax.swing.JPanel {
                 "Unit No.", "Resident Name", "Status", "Feedback"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(cleaning);
 
         btnRefresh.setText("Refresh");
         btnRefresh.addActionListener(new java.awt.event.ActionListener() {
@@ -107,13 +126,28 @@ public class CleaningWorkArea extends javax.swing.JPanel {
         
     }//GEN-LAST:event_btnRefreshActionPerformed
 
+public void populateTable() {
+        DefaultTableModel model = (DefaultTableModel) cleaning.getModel();
 
+        model.setRowCount(0);
+        
+        System.out.println(par.getWorkQueue().getWorkRequestList()+"Jj");
+        for (WorkRequest request : par.getWorkQueue().getWorkRequestList()) {
+            Object[] row = new Object[4];
+            row[0] = request;
+            row[1] = request.getSender().getOrganisation().getName();
+            row[2] = request.getReceiver() == null ? null : request.getReceiver().getOrganisation().getName();
+            row[3] = request.getStatus();
+
+            model.addRow(row);
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRefresh;
+    private javax.swing.JTable cleaning;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

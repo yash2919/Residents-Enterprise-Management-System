@@ -45,7 +45,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     public void popOrganizationComboBox() {
         cmbOrganization.removeAllItems();
 
-        for (Enterprise organization : business.getOrganizationDirectory().getOrganizationList()) {
+        for (Enterprise organization : business.getEnterpriseDirectory().getEnterpriseList()) {
             cmbOrganization.addItem(organization);
         }
     }
@@ -53,8 +53,8 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     public void populateEmployeeComboBox(Enterprise organization) {
         cmbEmployee.removeAllItems();
 
-        for (Organisation employee : organization.getOrganisationDirectory().getOrganisationList()) {
-            cmbEmployee.addItem(employee);
+        for (Organisation organisation : organization.getOrganisationDirectory().getOrganisationList()) {
+            cmbEmployee.addItem(organisation);
         }
     }
     
@@ -72,13 +72,15 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
 
     model.setRowCount(0);
 
-    for (Enterprise organization : business.getOrganizationDirectory().getOrganizationList()) {
-        for (UserAccount ua : organization.getUserAccountDirectory().getUserAccountList()) {
+    for (Enterprise enterprise : business.getEnterpriseDirectory().getEnterpriseList()) {
+        for(Organisation org: enterprise.getOrganisationDirectory().getOrganisationList()){
+        for (UserAccount ua : org.getUserAccountDirectory().getUserAccountList()) {
             Object row[] = new Object[3]; // Increase the size of the array to accommodate Organization ID
             row[0] = ua;
             row[1] = ua.getRole();
-            row[2] = organization.getOrganizationID(); // Add Organization ID to the row
+            row[2] = org.getId(); 
             ((DefaultTableModel) tblUsers.getModel()).addRow(row);
+        }
         }
     }
 }
@@ -322,10 +324,11 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         String userName = txtUserName.getText();
         String password = txtPassword.getText();
         Enterprise organization = (Enterprise) cmbOrganization.getSelectedItem();
-        Organisation employee = (Organisation) cmbEmployee.getSelectedItem();
+        Organisation org = (Organisation) cmbEmployee.getSelectedItem();
         Role role = (Role) cmbRoles.getSelectedItem();
         System.out.println("This is the data from Creating a new user"+ cmbEmployee.getSelectedItem());
-        organization.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
+        organization.getOrganisationDirectory().getOrganisationList();
+        org.getUserAccountDirectory().createUserAccount(userName, password, org, role);
 
         popUserAccountsTable();
 

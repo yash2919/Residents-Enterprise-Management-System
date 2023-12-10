@@ -7,6 +7,7 @@ package ui;
 
 import business.Business;
 import business.Enterprise.Enterprise;
+import business.Organisation.Organisation;
 import business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
@@ -163,11 +164,17 @@ public class LoginScreen extends javax.swing.JPanel {
         boolean flag = false;
 
         UserAccount userAccount = null;
-        for (Enterprise organization : business.getOrganizationDirectory().getOrganizationList()){
-            userAccount = organization.getUserAccountDirectory().authenticateUser(userName, password);
-            if (userAccount != null){
-                
-                JPanel mainScreen = new MainScreen(mainWorkArea, userAccount, organization, business);
+        for (Enterprise ent : business.getEnterpriseDirectory().getEnterpriseList()){
+         //    System.out.println(ent);
+            for(Organisation org: ent.getOrganisationDirectory().getOrganisationList()){
+          //     System.out.println(org);
+               // for()
+                userAccount=org.getUserAccountDirectory().authenticateUser(userName, password);
+             //   System.out.println(userAccount);
+              
+                 if (userAccount != null){
+            //    System.out.println(userAccount);
+                JPanel mainScreen = new MainScreen(mainWorkArea, userAccount, ent, business);
                 mainWorkArea.add("MainScreen", mainScreen);
                 CardLayout layout = (CardLayout) mainWorkArea.getLayout();
                 layout.next(mainWorkArea);
@@ -175,11 +182,14 @@ public class LoginScreen extends javax.swing.JPanel {
                 flag = true;
                 break;
             }
+            }
         }
+        
 
         if (flag == false) {
             JOptionPane.showMessageDialog(null, "Invalid User Name/ Password.");
             return;
+        
         }
 
 //        btnLogin.setEnabled(false);

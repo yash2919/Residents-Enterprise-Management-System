@@ -4,6 +4,8 @@
  */
 package business.Organisation;
 
+import business.UserAccount.UserAccountDirectory;
+
 /**
  * 
  *
@@ -14,8 +16,11 @@ public class Organisation {
     private String name;
     private int id;
     private static int count = 1;
+    private UserAccountDirectory userAccountDirectory;
+    
 
     public Organisation() {
+         userAccountDirectory = new UserAccountDirectory();
         id = count;
         count++;
     }
@@ -31,6 +36,9 @@ public class Organisation {
     
     public String getName() {
         return name;
+    }
+        public UserAccountDirectory getUserAccountDirectory() {
+        return userAccountDirectory;
     }
 
     @Override

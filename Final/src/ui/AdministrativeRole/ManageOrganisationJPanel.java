@@ -4,9 +4,9 @@
  */
 package ui.AdministrativeRole;
 
-import business.Organisation.Organisation;
 import business.Enterprise.Enterprise;
 import business.Enterprise.EnterpriseDirectory;
+import business.Organisation.Organisation;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -35,7 +35,7 @@ public class ManageOrganisationJPanel extends javax.swing.JPanel {
     public void populateOrganizationComboBox(){
         cmbOrganizationList.removeAllItems();
         
-        for (Enterprise organization : organizationDir.getOrganizationList()){
+        for (Enterprise organization : organizationDir.getEnterpriseList()){
             cmbOrganizationList.addItem(organization);
         }
     }
@@ -45,10 +45,10 @@ public class ManageOrganisationJPanel extends javax.swing.JPanel {
         
         model.setRowCount(0);
         
-        for (Organisation employee : organization.getOrganisationDirectory().getOrganisationList()){
+        for (Organisation organisation : organization.getOrganisationDirectory().getOrganisationList()){
             Object[] row = new Object[2];
-            row[0] = employee.getId();
-            row[1] = employee.getName();
+            row[0] = organisation.getId();
+            row[1] = organisation.getName();
             model.addRow(row);
         }
     }
@@ -213,7 +213,7 @@ public class ManageOrganisationJPanel extends javax.swing.JPanel {
             return;
         }
         
-        organization.getOrganisationDirectory().createEmployee(name);
+        organization.getOrganisationDirectory().createorganisation(name);
         txtEmployeeName.setText("");
         populateTable(organization);
         

@@ -29,11 +29,11 @@ public class UserAccountDirectory {
         return null;
     }
     
-    public UserAccount createUserAccount(String username, String password, Organisation employee, Role role){
+    public UserAccount createUserAccount(String username, String password, Organisation org, Role role){
         UserAccount userAccount = new UserAccount();
         userAccount.setUsername(username);
         userAccount.isPasswordValid(password);
-        userAccount.setEmployee(employee);
+        userAccount.setOrganisation(org);
         userAccount.setRole(role);
         userAccountList.add(userAccount);
         return userAccount;

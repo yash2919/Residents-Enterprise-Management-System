@@ -12,12 +12,12 @@ import java.util.ArrayList;
 
 /**
  *
- * @author raunak
+ * 
  */
 public class PestControlEnterprise extends Enterprise{
 
     public PestControlEnterprise() {
-        super(Enterprise.Type.Pest_Control_Organisation.getValue());
+        super(Type.Pest_Control_Organisation.getValue());
     }
 
     @Override

@@ -1,6 +1,7 @@
 
 package business.Enterprise;
 
+import business.Enterprise.EnterpriseDirectory;
 import business.Organisation.OrganisationDirectory;
 import business.Role.Role;
 import business.UserAccount.UserAccountDirectory;
@@ -15,9 +16,9 @@ public abstract class Enterprise {
 
     private String name;
     private WorkQueue workQueue;
+//    private EnterpriseDirectory EnterpriseDirectory;
     private OrganisationDirectory organisationDirectory;
-    private UserAccountDirectory userAccountDirectory;
-    private int organizationID;
+    private int EnterpriseID;
     private static int counter;
     
     public enum Type{
@@ -49,25 +50,28 @@ public abstract class Enterprise {
     public Enterprise(String name) {
         this.name = name;
         workQueue = new WorkQueue();
-        organisationDirectory = new OrganisationDirectory();
-        userAccountDirectory = new UserAccountDirectory();
-        organizationID = counter;
+//        EnterpriseDirectory = new EnterpriseDirectory();
+//        userAccountDirectory = new UserAccountDirectory();
+        organisationDirectory=new OrganisationDirectory();
+        EnterpriseID = counter;
         ++counter;
     }
 
     public abstract ArrayList<Role> getSupportedRole();
     
-    public UserAccountDirectory getUserAccountDirectory() {
-        return userAccountDirectory;
-    }
+//    public UserAccountDirectory getUserAccountDirectory() {
+//        return userAccountDirectory;
+//    }
 
-    public int getOrganizationID() {
-        return organizationID;
+    public int getEnterpriseID() {
+        return EnterpriseID;
     }
 
     public OrganisationDirectory getOrganisationDirectory() {
         return organisationDirectory;
     }
+    
+   
     
     public String getName() {
         return name;
