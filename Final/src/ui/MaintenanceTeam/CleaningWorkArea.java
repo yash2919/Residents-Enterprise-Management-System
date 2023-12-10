@@ -6,6 +6,7 @@ package ui.MaintenanceTeam;
 
 import business.Business;
 import business.Enterprise.MaintenanceTeamEnterprise;
+import business.Role.MiticidesTeamRole;
 import business.UserAccount.UserAccount;
 import javax.swing.JPanel;
 
@@ -20,6 +21,7 @@ public class CleaningWorkArea extends javax.swing.JPanel {
      */
     public CleaningWorkArea(JPanel userProcessContainer, UserAccount account, MaintenanceTeamEnterprise par, Business business) {
         initComponents();
+       
     }
 
     /**
