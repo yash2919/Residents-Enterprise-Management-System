@@ -7,7 +7,9 @@ package ui.AdministrativeRole;
 import business.Business;
 import business.Organisation.Organisation;
 import business.Enterprise.Enterprise;
+import business.Role.ResidentRole;
 import business.Role.Role;
+import static business.Role.Role.RoleType.Residents;
 import business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
@@ -25,11 +27,13 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
      */
     private JPanel container;
     private Business business;
+    private Integer j=4;
 
     public ManageUserAccountJPanel(JPanel container, Business business) {
         initComponents();
         this.business = business;
         this.container = container;
+        
 
         popOrganizationComboBox();
         users();
@@ -326,12 +330,20 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         Enterprise organization = (Enterprise) cmbOrganization.getSelectedItem();
         Organisation org = (Organisation) cmbEmployee.getSelectedItem();
         Role role = (Role) cmbRoles.getSelectedItem();
+        if(role.type==Residents){
+                   System.out.println("This is the data from Creating a new user"+ cmbEmployee.getSelectedItem());
+        organization.getOrganisationDirectory().getOrganisationList();
+        org.getUserAccountDirectory().createResAccount(userName, password,j, org, ResidentRole.createResidentRole());
+        System.out.println(j);
+        }
+        else{
         System.out.println("This is the data from Creating a new user"+ cmbEmployee.getSelectedItem());
         organization.getOrganisationDirectory().getOrganisationList();
         org.getUserAccountDirectory().createUserAccount(userName, password, org, role);
-
+        }
+        
         popUserAccountsTable();
-
+        
         JOptionPane.showMessageDialog(null, "User Account added successfully.");
         txtUserName.setText("");
         txtPassword.setText("");

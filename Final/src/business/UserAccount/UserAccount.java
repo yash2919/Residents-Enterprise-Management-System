@@ -19,6 +19,8 @@ public class UserAccount {
 //    private String password;
     private Organisation organisation;
 
+       public Integer id;
+    private boolean validate=false;
     public Organisation getOrganisation() {
         return organisation;
     }
@@ -53,6 +55,24 @@ public class UserAccount {
 //    public void setPassword(String password) {
 //        this.password = password;
 //    }
+    
+        public int getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+    
+
+    // Getter and Setter for validate
+    public boolean isValidate() {
+        return validate;
+    }
+
+    public void setValidate(boolean validate) {
+        this.validate = validate;
+    }
 
     public Role getRole() {
         return role;
