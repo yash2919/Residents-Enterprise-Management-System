@@ -37,7 +37,1215 @@ public class LeasingTeamWorkAreaJPanel extends javax.swing.JPanel {
        
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+//       this.workArea = workArea;
+//        this.organization = organization;
+//        this.business = business;
+//        this.userAccount = account;
+//    
 
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }//        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+    
+    
+      
+    
+//       this.workArea = workArea;
+//        this.organization = organization;
+//        this.business = business;
+//        this.userAccount = account;
+//    
+
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }//        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+
+      
+    
+//       this.workArea = workArea;
+//        this.organization = organization;
+//        this.business = business;
+//        this.userAccount = account;
+//    
+
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }//        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+
+      
+    
+//       this.workArea = workArea;
+//        this.organization = organization;
+//        this.business = business;
+//        this.userAccount = account;
+//    
+
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }//        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+
+      
+    
+//       this.workArea = workArea;
+//        this.organization = organization;
+//        this.business = business;
+//        this.userAccount = account;
+//    
+
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }//        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+
+      
+    
+//       this.workArea = workArea;
+//        this.organization = organization;
+//        this.business = business;
+//        this.userAccount = account;
+//    
+
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }//        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+
+      
+    
+//       this.workArea = workArea;
+//        this.organization = organization;
+//        this.business = business;
+//        this.userAccount = account;
+//    
+
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }//        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+
+      
+    
+//       this.workArea = workArea;
+//        this.organization = organization;
+//        this.business = business;
+//        this.userAccount = account;
+//    
+
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }//        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+
+      
+    
+//       this.workArea = workArea;
+//        this.organization = organization;
+//        this.business = business;
+//        this.userAccount = account;
+//    
+
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }//        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+
+      
+    
+//       this.workArea = workArea;
+//        this.organization = organization;
+//        this.business = business;
+//        this.userAccount = account;
+//    
+
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }//        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+
+      
+    
+//       this.workArea = workArea;
+//        this.organization = organization;
+//        this.business = business;
+//        this.userAccount = account;
+//    
+
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }//        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+
+      
+    
+//       this.workArea = workArea;
+//        this.organization = organization;
+//        this.business = business;
+//        this.userAccount = account;
+//    
+
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }//        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+
+      
+    
+//       this.workArea = workArea;
+//        this.organization = organization;
+//        this.business = business;
+//        this.userAccount = account;
+//    
+
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }//        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+
+      
+    
+//       this.workArea = workArea;
+//        this.organization = organization;
+//        this.business = business;
+//        this.userAccount = account;
+//    
+
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }//        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+
+      
+    
+//       this.workArea = workArea;
+//        this.organization = organization;
+//        this.business = business;
+//        this.userAccount = account;
+//    
+
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }//        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+    //        int selectedRow = tblWorkRequests.getSelectedRow();
+//
+//        if (selectedRow >= 0) {
+//            WorkRequest request = (WorkRequest) tblWorkRequests.getValueAt(selectedRow, 0);
+//            if (request.getMessage().equalsIgnoreCase("Completed")) {
+//                JOptionPane.showMessageDialog(null, "Request already processed.");
+//                return;
+//            } else {
+//                request.setReceiver(userAccount);
+//                request.setStatus("Pending");
+//                populateTable();
+//
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+//            return;
+//        }
+
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
