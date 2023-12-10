@@ -13,6 +13,7 @@ public abstract class WorkRequest {
     private String message;
     private UserAccount sender;
     private UserAccount receiver;
+        private UserAccount sender2;
     private String status;
     private Date requestDate;
     private Date resolveDate;
@@ -20,6 +21,14 @@ public abstract class WorkRequest {
     
     public WorkRequest(){
         requestDate = new Date();
+    }
+
+    public UserAccount getSender2() {
+        return sender2;
+    }
+
+    public void setSender2(UserAccount sender2) {
+        this.sender2 = sender2;
     }
 
     public String getMessage() {
@@ -82,7 +91,7 @@ public abstract class WorkRequest {
     @Override
     
     public String toString(){
-        return this.message;
+        return this.sender.getUsername();
     }
             
 }
