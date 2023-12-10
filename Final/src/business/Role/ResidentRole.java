@@ -38,6 +38,13 @@ public class ResidentRole extends Role {
     public void setValidate(boolean validate) {
         this.validate = validate;
     }
+    
+    public static ResidentRole createResidentRole(int id) {
+        ResidentRole residentRole = new ResidentRole();
+        residentRole.setId(id);
+        return residentRole;
+    }
+
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Enterprise organization, Business business) {
