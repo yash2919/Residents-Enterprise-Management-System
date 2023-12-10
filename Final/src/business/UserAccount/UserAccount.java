@@ -16,7 +16,9 @@ public class UserAccount {
     
     private String username;
 //    private String password;
+
     private Organisation employee;
+
     private Role role;
     private WorkQueue workQueue;
     private ArrayList<String> historyPass;
