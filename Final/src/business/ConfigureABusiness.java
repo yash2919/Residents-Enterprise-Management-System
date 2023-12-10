@@ -66,9 +66,11 @@ public class ConfigureABusiness {
         org2.getUserAccountDirectory().createUserAccount("Concierge1","Concierge1",org2,new ConciergeRole());
         org2.getUserAccountDirectory().createUserAccount("Concierge2","Concierge2",org2,new ConciergeRole());
         org2.getUserAccountDirectory().createUserAccount("Concierge3","Concierge3",org2,new ConciergeRole());         
-        org2.getUserAccountDirectory().createUserAccount("Resident1","Resident1",org2,new ResidentRole());
-        org2.getUserAccountDirectory().createUserAccount("Resident2","Resident2",org2,new ResidentRole());
-        org2.getUserAccountDirectory().createUserAccount("Resident3", "Resident3", org2, new ResidentRole());
+        org2.getUserAccountDirectory().createUserAccount("Resident1", "Resident1", org2, ResidentRole.createResidentRole(1));
+        org2.getUserAccountDirectory().createUserAccount("Resident2", "Resident2", org2, ResidentRole.createResidentRole(2));
+        org2.getUserAccountDirectory().createUserAccount("Resident3", "Resident3", org2, ResidentRole.createResidentRole(3));
+
+        
         
               //  org2.getUserAccountDirectory().getUserAccountList().add(account);
 
