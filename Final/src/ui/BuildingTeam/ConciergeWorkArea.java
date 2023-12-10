@@ -53,8 +53,14 @@ Business business;
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         ServiceRequest = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Service = new javax.swing.JTable();
+        jLabel6 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
         Package = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         btnBack1 = new javax.swing.JButton();
@@ -116,7 +122,7 @@ Business business;
                                 .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))))
-                .addContainerGap(320, Short.MAX_VALUE))
+                .addContainerGap(385, Short.MAX_VALUE))
         );
         WorkAreaLayout.setVerticalGroup(
             WorkAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -136,10 +142,6 @@ Business business;
 
         add(WorkArea, "card7");
 
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Service  Request");
-        jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
         btnBack.setText("BACK");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -147,28 +149,92 @@ Business business;
             }
         });
 
+        Service.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Unit  No.", "Res. Name", "Type", "Message", "Status", "Feedback"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(Service);
+        if (Service.getColumnModel().getColumnCount() > 0) {
+            Service.getColumnModel().getColumn(0).setResizable(false);
+            Service.getColumnModel().getColumn(1).setResizable(false);
+            Service.getColumnModel().getColumn(2).setResizable(false);
+            Service.getColumnModel().getColumn(3).setResizable(false);
+            Service.getColumnModel().getColumn(4).setResizable(false);
+            Service.getColumnModel().getColumn(5).setResizable(false);
+        }
+
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("Concierge Service Request Area");
+        jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jButton5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton5.setText("Packaging");
+
+        jButton6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton6.setText("Pest Control");
+
+        jButton7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton7.setText("Maintenance");
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel7.setText("Send Service Request To Enterprise");
+
         javax.swing.GroupLayout ServiceRequestLayout = new javax.swing.GroupLayout(ServiceRequest);
         ServiceRequest.setLayout(ServiceRequestLayout);
         ServiceRequestLayout.setHorizontalGroup(
             ServiceRequestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ServiceRequestLayout.createSequentialGroup()
                 .addGroup(ServiceRequestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(ServiceRequestLayout.createSequentialGroup()
-                        .addGap(322, 322, 322)
-                        .addComponent(jLabel2))
+                        .addContainerGap()
+                        .addComponent(btnBack))
                     .addGroup(ServiceRequestLayout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 753, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(ServiceRequestLayout.createSequentialGroup()
+                        .addGap(207, 207, 207)
+                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(26, 26, 26)
-                        .addComponent(btnBack)))
-                .addContainerGap(359, Short.MAX_VALUE))
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)
+                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(ServiceRequestLayout.createSequentialGroup()
+                        .addGap(254, 254, 254)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
         ServiceRequestLayout.setVerticalGroup(
             ServiceRequestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ServiceRequestLayout.createSequentialGroup()
-                .addGap(59, 59, 59)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnBack)
-                .addContainerGap(406, Short.MAX_VALUE))
+                .addGap(33, 33, 33)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(ServiceRequestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(130, Short.MAX_VALUE))
         );
 
         add(ServiceRequest, "card3");
@@ -196,7 +262,7 @@ Business business;
                     .addGroup(PackageLayout.createSequentialGroup()
                         .addGap(41, 41, 41)
                         .addComponent(btnBack1)))
-                .addContainerGap(355, Short.MAX_VALUE))
+                .addContainerGap(420, Short.MAX_VALUE))
         );
         PackageLayout.setVerticalGroup(
             PackageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -233,7 +299,7 @@ Business business;
                     .addGroup(EnquriesLayout.createSequentialGroup()
                         .addGap(52, 52, 52)
                         .addComponent(btnBack2)))
-                .addContainerGap(355, Short.MAX_VALUE))
+                .addContainerGap(420, Short.MAX_VALUE))
         );
         EnquriesLayout.setVerticalGroup(
             EnquriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -263,7 +329,7 @@ Business business;
         ComplaintsLayout.setHorizontalGroup(
             ComplaintsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ComplaintsLayout.createSequentialGroup()
-                .addContainerGap(347, Short.MAX_VALUE)
+                .addContainerGap(412, Short.MAX_VALUE)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(338, 338, 338))
             .addGroup(ComplaintsLayout.createSequentialGroup()
@@ -404,6 +470,7 @@ Business business;
     private javax.swing.JPanel Complaints;
     private javax.swing.JPanel Enquries;
     private javax.swing.JPanel Package;
+    private javax.swing.JTable Service;
     private javax.swing.JPanel ServiceRequest;
     private javax.swing.JPanel WorkArea;
     private javax.swing.JButton btnBack;
@@ -414,10 +481,15 @@ Business business;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
