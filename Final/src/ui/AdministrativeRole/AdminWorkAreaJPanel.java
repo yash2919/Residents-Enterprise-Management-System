@@ -130,7 +130,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
 
     private void manageEmployeeJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageEmployeeJButtonActionPerformed
 
-        ManageOrganisationJPanel manageEmployeeJPanel = new ManageOrganisationJPanel(userProcessContainer, business.getOrganizationDirectory());
+        ManageOrganisationJPanel manageEmployeeJPanel = new ManageOrganisationJPanel(userProcessContainer, business.getEnterpriseDirectory());
         userProcessContainer.add("manageEmployeeJPanel", manageEmployeeJPanel);
 
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
@@ -140,7 +140,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
 
     private void manageOrganizationJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageOrganizationJButtonActionPerformed
 
-        ManageEnterpriseJPanel manageOrganizationJPanel = new ManageEnterpriseJPanel(userProcessContainer, business.getOrganizationDirectory());
+        ManageEnterpriseJPanel manageOrganizationJPanel = new ManageEnterpriseJPanel(userProcessContainer, business.getEnterpriseDirectory());
         userProcessContainer.add("manageOrganizationJPanel", manageOrganizationJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);

@@ -7,7 +7,9 @@ package ui.MaintenanceTeam;
 import business.Business;
 import business.Enterprise.MaintenanceTeamEnterprise;
 import business.UserAccount.UserAccount;
+import business.WorkQueue.WorkRequest;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -18,8 +20,37 @@ public class PlumberWorkArea extends javax.swing.JPanel {
     /**
      * Creates new form PlumberWorkArea
      */
+    
+                JPanel userProcessContainer;
+UserAccount account;
+MaintenanceTeamEnterprise par;
+Business business;
     public PlumberWorkArea(JPanel userProcessContainer, UserAccount account, MaintenanceTeamEnterprise par, Business business) {
         initComponents();
+                this.userProcessContainer=userProcessContainer;
+        this.account=account;
+        this.par=par;
+        this.business=business;
+        show();
+                populateTable();
+
+    }
+    
+    public void populateTable() {
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
+        model.setRowCount(0);
+        
+        System.out.println(par.getWorkQueue().getWorkRequestList()+"Jj");
+        for (WorkRequest request : par.getWorkQueue().getWorkRequestList()) {
+            Object[] row = new Object[4];
+            row[0] = request;
+            row[1] = request.getSender().getOrganisation().getName();
+            row[2] = request.getReceiver() == null ? null : request.getReceiver().getOrganisation().getName();
+            row[3] = request.getStatus();
+
+            model.addRow(row);
+        }
     }
 
     /**

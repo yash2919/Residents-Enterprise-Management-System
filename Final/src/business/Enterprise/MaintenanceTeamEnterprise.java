@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class MaintenanceTeamEnterprise extends Enterprise{
 
     public MaintenanceTeamEnterprise() {
-        super(Enterprise.Type.Maintenance_Team.getValue());
+        super(Type.Maintenance_Team.getValue());
     }
     
     @Override

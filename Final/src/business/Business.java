@@ -10,7 +10,7 @@ import business.Enterprise.EnterpriseDirectory;
 public class Business {
 
     private static Business business;
-    private EnterpriseDirectory organizationDirectory;
+    private EnterpriseDirectory enterpriseDirectory;
 
     public static Business getInstance() {
         if (business == null) {
@@ -20,10 +20,12 @@ public class Business {
     }
 
     private Business() {
-        organizationDirectory = new EnterpriseDirectory();
+        enterpriseDirectory = new EnterpriseDirectory();
     }
 
-    public EnterpriseDirectory getOrganizationDirectory() {
-        return organizationDirectory;
+    public EnterpriseDirectory getEnterpriseDirectory() {
+        return enterpriseDirectory;
     }
+    
+    
 }

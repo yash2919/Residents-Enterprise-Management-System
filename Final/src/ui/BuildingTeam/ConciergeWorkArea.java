@@ -310,6 +310,20 @@ Business business;
         Complaints.setVisible(false);
         WorkArea.setVisible(false);
         Enquries.setVisible(true);
+        
+        LabTestWorkRequest request = new LabTestWorkRequest();
+        request.setMessage("Enquiry Check");
+        request.setSender(account);
+        request.setStatus("Sent");
+        
+
+        if (par!=null){
+            System.out.println(par.getWorkQueue().getWorkRequestList()+"    bjdsvsbdvk");
+            par.getWorkQueue().getWorkRequestList().add(request);
+            account.getWorkQueue().getWorkRequestList().add(request);
+        }
+        
+        JOptionPane.showMessageDialog(null, "Request for enq message sent");
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -356,26 +370,33 @@ Business business;
         WorkArea.setVisible(true);
         Enquries.setVisible(false);
     }//GEN-LAST:event_btnBack3ActionPerformed
-    public void check(){
+   
+        public void check(){
         LabTestWorkRequest request = new LabTestWorkRequest();
         request.setMessage("Maintain Check");
         request.setSender(account);
         request.setStatus("Sent");
         
         Enterprise ent = null;
-        for (Enterprise enter : business.getOrganizationDirectory().getOrganizationList()){
+        for (Enterprise enter : business.getEnterpriseDirectory().getEnterpriseList()){
+            
             if (enter instanceof MaintenanceTeamEnterprise){
-            } else {
+            
                 ent = enter;
                 break;
             }
         }
         if (ent!=null){
+            System.out.println(ent.getName()+"amrish lord");
+            System.out.println(ent.getOrganisationDirectory().toString());
             ent.getWorkQueue().getWorkRequestList().add(request);
             account.getWorkQueue().getWorkRequestList().add(request);
-        }
+            
+       
         
-        JOptionPane.showMessageDialog(null, "Request message sent");
+        
+        
+    }
         
     }
 

@@ -15,18 +15,18 @@ public class MainScreen extends javax.swing.JPanel {
 
     JPanel mainWorkArea;
     UserAccount userAccount;
-    Enterprise organization;
+    Enterprise ent;
     Business business;
     
     
     /**
      * Creates new form MainScreen
      */
-    public MainScreen(JPanel mainWorkArea, UserAccount userAccount, Enterprise organization, Business business){
+    public MainScreen(JPanel mainWorkArea, UserAccount userAccount, Enterprise ent, Business business){
         initComponents();
         this.mainWorkArea = mainWorkArea;
         this.userAccount = userAccount;
-        this.organization = organization;                
+        this.ent = ent;                
         this.business = business;
         
         initUserWorkArea();
@@ -119,10 +119,10 @@ public class MainScreen extends javax.swing.JPanel {
 
     private void initUserWorkArea() {
         
-        lblWelcome.setText("Welcome " + ((userAccount.getEmployee() != null) ? userAccount.getEmployee().getName() : userAccount.getUsername()) + "!");
+        lblWelcome.setText("Welcome " + ((userAccount.getOrganisation() != null) ? userAccount.getOrganisation().getName() : userAccount.getUsername()) + "!");
         
         CardLayout layout = (CardLayout) workArea.getLayout();
-        workArea.add("workArea", userAccount.getRole().createWorkArea(workArea, userAccount, organization, business));
+        workArea.add("workArea", userAccount.getRole().createWorkArea(workArea, userAccount, ent, business));
         layout.next(workArea);
     }
 }

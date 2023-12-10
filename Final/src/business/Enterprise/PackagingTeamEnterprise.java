@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class PackagingTeamEnterprise extends Enterprise{
 
     public PackagingTeamEnterprise() {
-        super(Enterprise.Type.Packaging_Team.getValue());
+        super(Type.Packaging_Team.getValue());
     }
 
     @Override
