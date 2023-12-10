@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class BuildingTeamEnterprise extends Enterprise{
 
     public BuildingTeamEnterprise() {
-        super(Enterprise.Type.Building_Team.getValue());
+        super(Type.Building_Team.getValue());
     }
     
     

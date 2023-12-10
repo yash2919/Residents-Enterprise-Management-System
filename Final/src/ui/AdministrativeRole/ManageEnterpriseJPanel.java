@@ -45,9 +45,9 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         
         model.setRowCount(0);
         
-        for (Enterprise organization : directory.getOrganizationList()){
+        for (Enterprise organization : directory.getEnterpriseList()){
             Object[] row = new Object[2];
-            row[0] = organization.getOrganizationID();
+            row[0] = organization.getEnterpriseID();
             row[1] = organization.getName();
             
             model.addRow(row);
@@ -191,7 +191,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
 
         Type type = (Type) cmbOrganizations.getSelectedItem();
-        directory.createOrganization(type);
+        directory.createenterprise(type);
         populateTable();
     }//GEN-LAST:event_btnAddActionPerformed
 

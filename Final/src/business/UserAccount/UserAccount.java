@@ -1,6 +1,7 @@
 
 package business.UserAccount;
 
+import business.Enterprise.Enterprise;
 import business.Organisation.Organisation;
 import business.Role.Role;
 import business.WorkQueue.WorkQueue;
@@ -16,8 +17,16 @@ public class UserAccount {
     
     private String username;
 //    private String password;
+    private Organisation organisation;
 
-    private Organisation employee;
+    public Organisation getOrganisation() {
+        return organisation;
+    }
+
+    public void setOrganisation(Organisation organisation) {
+        this.organisation = organisation;
+    }
+
 
     private Role role;
     private WorkQueue workQueue;
@@ -49,16 +58,16 @@ public class UserAccount {
         return role;
     }
 
-    public void setEmployee(Organisation employee) {
-        this.employee = employee;
+    public void setOr(Organisation employee) {
+        this.organisation = organisation;
     }
 
     public void setRole(Role role) {
         this.role = role;
     }
 
-    public Organisation getEmployee() {
-        return employee;
+    public Organisation getOrgantisation() {
+        return organisation;
     }
 
     public WorkQueue getWorkQueue() {

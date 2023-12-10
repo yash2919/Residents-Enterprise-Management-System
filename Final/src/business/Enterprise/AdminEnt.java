@@ -9,9 +9,9 @@ import java.util.ArrayList;
  *
  * 
  */
-public class AdminOrganization extends Enterprise{
+public class AdminEnt extends Enterprise{
 
-    public AdminOrganization() {
+    public AdminEnt() {
         super(Type.Admin.getValue());
     }
     
@@ -21,5 +21,7 @@ public class AdminOrganization extends Enterprise{
         roles.add(new AdminRole());
         return roles;
     }
+
+
      
 }
