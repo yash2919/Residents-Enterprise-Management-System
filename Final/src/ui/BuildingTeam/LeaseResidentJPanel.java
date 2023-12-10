@@ -36,13 +36,13 @@ public class LeaseResidentJPanel extends javax.swing.JPanel {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
             },
             new String [] {
-                "Unit No.", "Resident Name", "Title 3", "Title 4"
+                "Unit No.", "Resident Name"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
