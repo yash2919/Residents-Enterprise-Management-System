@@ -358,6 +358,9 @@ BuildingTeamEnterprise par;
             account.getWorkQueue().getWorkRequestList().add(request);
             JOptionPane.showMessageDialog(null,"Service Request Added!");
              populate();
+             type.setText("");
+             message.setText("");
+             
         }else{
             JOptionPane.showMessageDialog(null,"No Enterprise");
         }
