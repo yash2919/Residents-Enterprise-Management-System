@@ -2,6 +2,7 @@
 package business.UserAccount;
 
 import business.Organisation.Organisation;
+import business.Role.ResidentRole;
 import business.Role.Role;
 import java.util.ArrayList;
 
@@ -38,4 +39,16 @@ public class UserAccountDirectory {
         userAccountList.add(userAccount);
         return userAccount;
     }
+
+    public UserAccount createResAccount(String username, String password, Integer id, Organisation org, Role role){
+        
+                UserAccount userAccount = new UserAccount();
+        userAccount.setUsername(username);
+        userAccount.isPasswordValid(password);
+        userAccount.setOrganisation(org);
+        userAccount.setRole(role);
+        userAccount.setId(id);
+        userAccountList.add(userAccount);
+        return userAccount;
+          }
 }
