@@ -8,11 +8,15 @@ import business.Business;
 import business.Enterprise.BuildingTeamEnterprise;
 import business.Enterprise.MaintenanceTeamEnterprise;
 import business.Enterprise.Enterprise;
+import business.Enterprise.PackagingTeamEnterprise;
+import business.Enterprise.PestControlEnterprise;
 import business.Organisation.Organisation;
 import business.UserAccount.UserAccount;
 import business.WorkQueue.LabTestWorkRequest;
+import business.WorkQueue.WorkRequest;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 import ui.MainScreen;
 
 /**
@@ -33,7 +37,7 @@ Business business;
         this.account=account;
         this.par=par;
         this.business=business;
-        
+        populate();
         check();
     }
 
@@ -184,12 +188,27 @@ Business business;
 
         jButton5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton5.setText("Packaging");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton6.setText("Pest Control");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton7.setText("Maintenance");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel7.setText("Send Service Request To Enterprise");
@@ -436,7 +455,169 @@ Business business;
         WorkArea.setVisible(true);
         Enquries.setVisible(false);
     }//GEN-LAST:event_btnBack3ActionPerformed
-   
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        
+        int selectedRow = Service.getSelectedRow();
+        if (selectedRow >= 0) {
+            String request = (String) Service.getValueAt(selectedRow, 3);
+            WorkRequest wok=null;
+            for(WorkRequest wkk:par.getWorkQueue().getWorkRequestList()){
+                if(wkk.getMessage().equals(request)){
+                    wok=wkk;
+                }else{
+                    JOptionPane.showMessageDialog(null, "Can not find work request.");
+                    return;
+                }
+            }
+            if(wok!=null){
+                Enterprise ent = null;
+        for (Enterprise enter : business.getEnterpriseDirectory().getEnterpriseList()){
+            
+            if (enter instanceof MaintenanceTeamEnterprise){
+            
+                ent = enter;
+                break;
+            }
+        }
+        if (ent!=null){
+
+            ent.getWorkQueue().getWorkRequestList().add(wok);
+            wok.setSender2(account);
+             JOptionPane.showMessageDialog(null, "Service request Sent to MaintenanceTeamEnterprise ");
+             
+        }
+                
+                
+                
+            }
+            
+       
+        
+        
+        
+    
+                
+            
+            
+            
+            
+        }else{
+            JOptionPane.showMessageDialog(null, "Please select a request message to process.");
+            return;
+        }
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+       int selectedRow = Service.getSelectedRow();
+        if (selectedRow >= 0) {
+            String request = (String) Service.getValueAt(selectedRow, 3);
+            
+            WorkRequest wok2=null;
+            for(WorkRequest wkk1:par.getWorkQueue().getWorkRequestList()){
+                if(wkk1.getMessage().equals(request)){
+                    wok2=wkk1;
+                }else{
+                    JOptionPane.showMessageDialog(null, "Can not find work request.");
+                    return;
+                }
+            }
+            if(wok2!=null){
+                Enterprise ent1 = null;
+                for (Enterprise enter : business.getEnterpriseDirectory().getEnterpriseList()){
+            
+            if (enter instanceof PackagingTeamEnterprise){
+            
+                ent1 = enter;
+                break;
+            }
+            }
+                if (ent1!=null){
+
+            ent1.getWorkQueue().getWorkRequestList().add(wok2);
+            wok2.setSender2(account);
+             JOptionPane.showMessageDialog(null, "Service request Sent to PackagingTeamEnterprise ");
+             
+        }
+                
+                
+                
+            }
+            
+            
+            
+        }else{
+          JOptionPane.showMessageDialog(null, "Please select a request message to process.");
+            return;  
+        }
+        
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+         int selectedRow = Service.getSelectedRow();
+        if (selectedRow >= 0) {
+            String request = (String) Service.getValueAt(selectedRow, 3);
+            
+            WorkRequest wok3=null;
+            for(WorkRequest wkk2:par.getWorkQueue().getWorkRequestList()){
+                if(wkk2.getMessage().equals(request)){
+                    wok3=wkk2;
+                }else{
+                    JOptionPane.showMessageDialog(null, "Can not find work request.");
+                    return;
+                }
+            }
+            if(wok3!=null){
+                Enterprise ent1 = null;
+                for (Enterprise enter : business.getEnterpriseDirectory().getEnterpriseList()){
+            
+            if (enter instanceof PestControlEnterprise){
+            
+                ent1 = enter;
+                break;
+            }
+            }
+                if (ent1!=null){
+            
+            ent1.getWorkQueue().getWorkRequestList().add(wok3);
+            wok3.setSender2(account);
+             JOptionPane.showMessageDialog(null, "Service request Sent to PestControlEnterprise ");
+             
+        }
+                
+                
+                
+            }
+            
+            
+            
+        }else{
+          JOptionPane.showMessageDialog(null, "Please select a request message to process.");
+            return;  
+        }
+        
+    }//GEN-LAST:event_jButton6ActionPerformed
+        public void populate(){
+            DefaultTableModel model = (DefaultTableModel) Service.getModel();
+            model.setRowCount(0);
+            
+            if(par!=null){
+               for(WorkRequest work: par.getWorkQueue().getWorkRequestList()){
+                   Object[] row = new Object[6];
+                   row[0]=work.getSender().id;
+                   row[1]=work.getSender();
+                   row[2]=work.getType();
+                   row[3]=work.getMessage();
+                   row[4]=work.getStatus();
+                   
+                   model.addRow(row);
+               }
+            }else{
+                JOptionPane.showMessageDialog(null,"No Enterprise Workqueue");
+            }
+        }
         public void check(){
         LabTestWorkRequest request = new LabTestWorkRequest();
         request.setMessage("Maintain Check");
