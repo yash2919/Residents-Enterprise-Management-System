@@ -34,6 +34,8 @@ BuildingTeamEnterprise par;
         this.business=business;
         
         populate();
+                     populateLease();
+
         
     }
 
@@ -63,6 +65,12 @@ BuildingTeamEnterprise par;
         type = new javax.swing.JTextField();
         message = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        applease = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        Service1 = new javax.swing.JTable();
+        jButton2 = new javax.swing.JButton();
+        btnSubmit1 = new javax.swing.JButton();
 
         setLayout(new java.awt.CardLayout());
 
@@ -79,7 +87,12 @@ BuildingTeamEnterprise par;
 
         jButton7.setText("Raise complaint");
 
-        jButton8.setText("Extend Lease");
+        jButton8.setText("Submit Lease Docs");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         jButton9.setText("Manage Payments");
 
@@ -154,7 +167,10 @@ BuildingTeamEnterprise par;
         jScrollPane1.setViewportView(Service);
         if (Service.getColumnModel().getColumnCount() > 0) {
             Service.getColumnModel().getColumn(0).setResizable(false);
+            Service.getColumnModel().getColumn(1).setHeaderValue("Message");
+            Service.getColumnModel().getColumn(2).setResizable(false);
             Service.getColumnModel().getColumn(3).setResizable(false);
+            Service.getColumnModel().getColumn(3).setHeaderValue("Feedback");
         }
 
         jLabel1.setText("MESSAGE :");
@@ -226,6 +242,89 @@ BuildingTeamEnterprise par;
         );
 
         add(ServiceRequest, "card3");
+
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Submit Lease Docs");
+        jLabel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        Service1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Id", "Type", "Status"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(Service1);
+        if (Service1.getColumnModel().getColumnCount() > 0) {
+            Service1.getColumnModel().getColumn(0).setResizable(false);
+            Service1.getColumnModel().getColumn(1).setResizable(false);
+            Service1.getColumnModel().getColumn(2).setResizable(false);
+        }
+
+        jButton2.setText("BACK");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        btnSubmit1.setText("SUBMIT");
+        btnSubmit1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubmit1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout appleaseLayout = new javax.swing.GroupLayout(applease);
+        applease.setLayout(appleaseLayout);
+        appleaseLayout.setHorizontalGroup(
+            appleaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(appleaseLayout.createSequentialGroup()
+                .addGroup(appleaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(appleaseLayout.createSequentialGroup()
+                        .addGap(352, 352, 352)
+                        .addComponent(btnSubmit1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(appleaseLayout.createSequentialGroup()
+                        .addGap(121, 121, 121)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 568, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(155, Short.MAX_VALUE))
+            .addGroup(appleaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(appleaseLayout.createSequentialGroup()
+                    .addGap(11, 11, 11)
+                    .addGroup(appleaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(appleaseLayout.createSequentialGroup()
+                            .addGap(33, 33, 33)
+                            .addComponent(jButton2)))
+                    .addContainerGap(11, Short.MAX_VALUE)))
+        );
+        appleaseLayout.setVerticalGroup(
+            appleaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, appleaseLayout.createSequentialGroup()
+                .addContainerGap(178, Short.MAX_VALUE)
+                .addComponent(btnSubmit1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(76, 76, 76)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(96, 96, 96))
+            .addGroup(appleaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(appleaseLayout.createSequentialGroup()
+                    .addGap(38, 38, 38)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(376, 376, 376)
+                    .addComponent(jButton2)
+                    .addContainerGap(39, Short.MAX_VALUE)))
+        );
+
+        add(applease, "card4");
     }// </editor-fold>//GEN-END:initComponents
     public void populate(){
         DefaultTableModel model = (DefaultTableModel) Service.getModel();
@@ -242,10 +341,7 @@ BuildingTeamEnterprise par;
             model.addRow(row);
             
         }
-        
-        
-        
-        
+ 
     }
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
@@ -272,7 +368,7 @@ BuildingTeamEnterprise par;
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
-        
+        applease.setVisible(false);
         ServiceRequest.setVisible(true);
         WorkArea.setVisible(false);
     }//GEN-LAST:event_jButton6ActionPerformed
@@ -283,14 +379,60 @@ BuildingTeamEnterprise par;
         WorkArea.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+               applease.setVisible(true);
+        ServiceRequest.setVisible(false);
+        WorkArea.setVisible(false);
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void btnSubmit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmit1ActionPerformed
+         DefaultTableModel model = (DefaultTableModel) Service1.getModel();
+         if( (model.getRowCount()<1) || (model.getValueAt(0, 2)!=null && model.getValueAt(0, 2).equals("submit again") && (model.getRowCount()<=1)) ){
+        LabTestWorkRequest request= new LabTestWorkRequest();
+        
+        request.setType("lease");
+       // request.setMessage(message.getText());
+        request.setStatus("sent");
+        request.setSender(account);
+        
+        if(par!=null){
+            par.getWorkQueue().getWorkRequestList().add(request);
+            account.getWorkQueue().getWorkRequestList().add(request);
+            JOptionPane.showMessageDialog(null,"Lease Request Added!");
+             populateLease();
+        }else{
+            JOptionPane.showMessageDialog(null,"No Enterprise");
+        }
+         }
+         else if(model.getValueAt(0, 2).equals("sent")|| (model.getValueAt(1, 2)!=null &&model.getValueAt(1, 2).equals("sent"))){
+              JOptionPane.showMessageDialog(null,"Your documents are in process with Lease Team");
+         }
+           else if(model.getValueAt(0, 2).equals("approved") ||(model.getValueAt(1, 2)!=null &&model.getValueAt(1, 2).equals("approved"))){
+              JOptionPane.showMessageDialog(null,"Your documents are Approved by the Lease Team");
+         }
+           
+         
+        
+    }//GEN-LAST:event_btnSubmit1ActionPerformed
+
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Service;
+    private javax.swing.JTable Service1;
     private javax.swing.JPanel ServiceRequest;
     private javax.swing.JPanel WorkArea;
+    private javax.swing.JPanel applease;
     private javax.swing.JButton btnSubmit;
+    private javax.swing.JButton btnSubmit1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
@@ -299,8 +441,29 @@ BuildingTeamEnterprise par;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField message;
     private javax.swing.JTextField type;
     // End of variables declaration//GEN-END:variables
+
+ public void populateLease(){
+        DefaultTableModel model = (DefaultTableModel) Service1.getModel();
+        model.setRowCount(0);
+        int i=1;
+        for(WorkRequest work:account.getWorkQueue().getWorkRequestList()){
+            if(work.getType().equals("lease")){
+            Object[] row = new Object[4];
+            row[0]=i;
+            row[1] = work.getType();
+         //   row[1]=work.getMessage();
+            row[2]=work.getStatus();
+            i++;
+            
+            model.addRow(row);
+            }
+        }
+ 
+    }
 }
