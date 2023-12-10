@@ -13,7 +13,10 @@ import ui.BuildingTeam.ResidentWorkArea;
  * 
  */
 public class ResidentRole extends Role {
+
     private static int id=0;
+
+
     private boolean validate;
 
     public ResidentRole() {
@@ -42,6 +45,7 @@ public class ResidentRole extends Role {
     public static ResidentRole createResidentRole() {
         ResidentRole residentRole = new ResidentRole();
         residentRole.setId(id++);
+
         return residentRole;
     }
 
