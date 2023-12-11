@@ -33,8 +33,10 @@
                   <Component id="manageEmployeeJButton" linkSize="2" alignment="0" max="32767" attributes="0"/>
                   <Component id="userJButton" linkSize="2" alignment="0" pref="165" max="32767" attributes="0"/>
                   <Component id="analyticsJPanel" alignment="0" max="32767" attributes="0"/>
+                  <Component id="analyticsJPanel1" alignment="0" max="32767" attributes="0"/>
+                  <Component id="analyticsJPanel2" alignment="0" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace pref="200" max="32767" attributes="0"/>
+              <EmptySpace pref="231" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -51,7 +53,11 @@
               <Component id="userJButton" linkSize="3" min="-2" pref="50" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="analyticsJPanel" min="-2" pref="50" max="-2" attributes="0"/>
-              <EmptySpace pref="55" max="32767" attributes="0"/>
+              <EmptySpace pref="22" max="32767" attributes="0"/>
+              <Component id="analyticsJPanel2" min="-2" pref="50" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="analyticsJPanel1" min="-2" pref="50" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -112,10 +118,32 @@
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="cc" red="99" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Analytics"/>
+        <Property name="text" type="java.lang.String" value="Residents Analytics"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="analyticsJPanelActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="analyticsJPanel1">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="cc" red="99" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Pest Service Req Graph"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="analyticsJPanel1ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="analyticsJPanel2">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="cc" red="99" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Maintenance Service Req Graph"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="analyticsJPanel2ActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
