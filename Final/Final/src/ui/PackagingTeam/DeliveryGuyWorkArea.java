@@ -5,23 +5,42 @@
 package ui.PackagingTeam;
 
 import business.Business;
+import business.Enterprise.BuildingTeamEnterprise;
+import business.Enterprise.Enterprise;
+import business.Enterprise.MaintenanceTeamEnterprise;
 import business.Enterprise.PackagingTeamEnterprise;
+import business.Organisation.Organisation;
 import business.UserAccount.UserAccount;
 import business.WorkQueue.WorkRequest;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author uttkarsh
- */
+ * @author uttkarsh1
+ * 
+ * 
+ * 
+ */ 
 public class DeliveryGuyWorkArea extends javax.swing.JPanel {
 
     /**
      * Creates new form DeliveryGuyWorkArea
      */
+    private JPanel workArea;
+    private PackagingTeamEnterprise ent;
+    private Business business;
+    private UserAccount userAccount;
     public DeliveryGuyWorkArea(JPanel userProcessContainer, UserAccount account, PackagingTeamEnterprise par, Business business) {
         initComponents();
+        
+    this.workArea = userProcessContainer; 
+    this.ent = par;
+    this.business = business;
+    this.userAccount = account;
+    
+    populateAssignedDeliveries();
     }
 
     /**
@@ -34,16 +53,21 @@ public class DeliveryGuyWorkArea extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        Updatevalidation = new javax.swing.JButton();
         btnRefresh = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         AssignDelivery = new javax.swing.JTable();
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Delivery Agent Work Area Portal");
-        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(null));
 
-        jButton1.setText("Update Delivery Status");
+        Updatevalidation.setText("Update Delivery Status");
+        Updatevalidation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdatevalidationActionPerformed(evt);
+            }
+        });
 
         btnRefresh.setText("Refresh");
         btnRefresh.addActionListener(new java.awt.event.ActionListener() {
@@ -60,7 +84,7 @@ public class DeliveryGuyWorkArea extends javax.swing.JPanel {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Package", "Delivery to Unit No.", "Resident Name", "Status", "DeliveryGuy"
+                "Apt. 1", "Assigned by", "Delivery Guy", "Status", "Date Assigned"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -89,7 +113,7 @@ public class DeliveryGuyWorkArea extends javax.swing.JPanel {
                             .addComponent(btnRefresh))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(520, 520, 520)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(Updatevalidation, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(45, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -105,42 +129,84 @@ public class DeliveryGuyWorkArea extends javax.swing.JPanel {
                         .addComponent(btnRefresh))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(32, 32, 32)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Updatevalidation, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(184, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     
     private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
-        populateAssignedDeliveriesActionPerformed(evt);
+   populateAssignedDeliveries();
     }//GEN-LAST:event_btnRefreshActionPerformed
-    private void populateAssignedDeliveriesActionPerformed(java.awt.event.ActionEvent evt) {                                          
-//    DefaultTableModel model = (DefaultTableModel) AssignDelivery.getModel();
-//
-//    // Clear the table before populating
-//    model.setRowCount(0);
-//
-//    // Iterate through the WorkRequests and add assigned deliveries to the table
-//    for (WorkRequest workRequest : userAccount.getWorkQueue().getWorkRequestList()) {
-//        // Check if the work request is related to delivery assignments
-//        if ("Delivery Assignment".equals(workRequest.getType()) && "Pending".equals(workRequest.getStatus())) {
-//            // Extract relevant information and add a row to the table
-//            Object[] row = {
-//                workRequest.getMessage(),
-//                workRequest.getSender().getUsername(),
-//                workRequest.getReceiver().getUsername(),
-//                workRequest.getRequestDate().toString() // Adjust this line based on the data type of getRequestDate
-//            };
-//            model.addRow(row);
+
+    private void UpdatevalidationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdatevalidationActionPerformed
+        // TODO add your handling code here:
+         for (WorkRequest workRequest : userAccount.getWorkQueue().getWorkRequestList()) {
+      for (Enterprise enterprise : business.getEnterpriseDirectory().getEnterpriseList()) {
+    for (Organisation organisation : enterprise.getOrganisationDirectory().getOrganisationList()) {
+        for (UserAccount residentAccount : organisation.getUserAccountDirectory().getUserAccountList()) {
+            // Check if the current account is the one you are interested in
+            if (residentAccount.getId()!=-1 && String.valueOf(residentAccount.getId()).equals(workRequest.getMessage())) {
+                // Do something with the resident information
+                System.out.println("Resident Name: " + residentAccount.getUsername());
+                workRequest.setStatus("Delivered");
+                
+                 WorkRequest newRequestToResident = new WorkRequest() {}; // Make sure this constructor exists
+            newRequestToResident.setMessage("Please Collect your order");
+            newRequestToResident.setSender(userAccount); 
+            newRequestToResident.setStatus("Delivered!");
+            newRequestToResident.setType("Delivery");
+            
+            residentAccount.getWorkQueue().getWorkRequestList().add(workRequest);
+            JOptionPane.showMessageDialog(null,"New Service request Created to User");
+            
+            
+            
+            
+                populateAssignedDeliveries();
+            }
+        }
+    }
+      }
+        
+}
+        
+        
+    }//GEN-LAST:event_UpdatevalidationActionPerformed
+    
+    
+    private void populateAssignedDeliveries() {
+    // Assuming you have a table named "AssignDelivery" in the delivery guy's UI
+    DefaultTableModel model = (DefaultTableModel) AssignDelivery.getModel();
+
+    // Clear the table before populating
+    model.setRowCount(0);
+
+    // Iterate through the WorkRequests and add assigned deliveries to the table
+    for (WorkRequest workRequest : userAccount.getWorkQueue().getWorkRequestList()) {
+        System.out.println(workRequest);
+        // Check if the work request is related to delivery assignments
+//        if ("Delivery Assignment".equals(workRequest.getType()) && "In-Transit".equals(workRequest.getStatus())) {
+            // Extract relevant information and add a row to the table
+            Object[] row = {
+                workRequest.getMessage(),
+                workRequest.getSender().getUsername(),
+                workRequest.getReceiver().getUsername(),
+                workRequest.getStatus(),
+                workRequest.getRequestDate().toString() // Adjust this line based on the data type of getRequestDate
+            };
+            model.addRow(row);
 //        }
-//    }
-}   
+
+    }
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable AssignDelivery;
+    private javax.swing.JButton Updatevalidation;
     private javax.swing.JButton btnRefresh;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
+

@@ -19,7 +19,7 @@ public class UserAccount {
 //    private String password;
     private Organisation organisation;
 
-       public Integer id;
+       public Integer id=-1;
     private boolean validate=false;
     public Organisation getOrganisation() {
         return organisation;

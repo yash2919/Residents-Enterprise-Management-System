@@ -108,8 +108,7 @@ public class RequestPestControlJPanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(101, 101, 101)
-                                .addComponent(btnRequestTest2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnRequestTest2))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnRequestTest)
                                 .addGap(33, 33, 33)
@@ -139,7 +138,7 @@ public class RequestPestControlJPanel extends javax.swing.JPanel {
                     .addComponent(btnRequestTest1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnRequestTest2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
                 .addComponent(btnBack)
                 .addGap(38, 38, 38))
         );

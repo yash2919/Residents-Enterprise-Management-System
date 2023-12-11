@@ -36,6 +36,9 @@ Boolean access=false;
         
         populate();
         populateLease();
+
+        populateDeli();
+
         access=account.isValidate();
         if(!access){
             jButton6.setEnabled(false);
@@ -79,12 +82,17 @@ Boolean access=false;
         Service1 = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
         btnSubmit1 = new javax.swing.JButton();
+        checkpackage = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        deli = new javax.swing.JTable();
+        jButton3 = new javax.swing.JButton();
 
         setLayout(new java.awt.CardLayout());
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Residents Work Area");
-        jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(null));
 
         jButton6.setText("Raise Service Request");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -101,6 +109,11 @@ Boolean access=false;
         });
 
         jButton10.setText("Check Packages");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout WorkAreaLayout = new javax.swing.GroupLayout(WorkArea);
         WorkArea.setLayout(WorkAreaLayout);
@@ -112,7 +125,9 @@ Boolean access=false;
                         .addGap(16, 16, 16)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(WorkAreaLayout.createSequentialGroup()
-                        .addGap(326, 326, 326)
+
+                        .addGap(345, 345, 345)
+
                         .addGroup(WorkAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(WorkAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -138,7 +153,7 @@ Boolean access=false;
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Residents Raise Service Request");
-        jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(null));
 
         Service.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -240,7 +255,7 @@ Boolean access=false;
 
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Submit Lease Docs");
-        jLabel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel5.setBorder(javax.swing.BorderFactory.createLineBorder(null));
 
         Service1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -320,6 +335,73 @@ Boolean access=false;
         );
 
         add(applease, "card4");
+
+        jLabel6.setText("Check For Resident Packages");
+
+        deli.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Message", "Sender", "Type", "Status"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(deli);
+        if (deli.getColumnModel().getColumnCount() > 0) {
+            deli.getColumnModel().getColumn(0).setResizable(false);
+            deli.getColumnModel().getColumn(1).setResizable(false);
+            deli.getColumnModel().getColumn(2).setResizable(false);
+            deli.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        jButton3.setText("BACK");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout checkpackageLayout = new javax.swing.GroupLayout(checkpackage);
+        checkpackage.setLayout(checkpackageLayout);
+        checkpackageLayout.setHorizontalGroup(
+            checkpackageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(checkpackageLayout.createSequentialGroup()
+                .addGroup(checkpackageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(checkpackageLayout.createSequentialGroup()
+                        .addGap(158, 158, 158)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(checkpackageLayout.createSequentialGroup()
+                        .addGap(124, 124, 124)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(checkpackageLayout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addComponent(jButton3)))
+                .addContainerGap(268, Short.MAX_VALUE))
+        );
+        checkpackageLayout.setVerticalGroup(
+            checkpackageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(checkpackageLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(jButton3)
+                .addContainerGap(53, Short.MAX_VALUE))
+        );
+
+        add(checkpackage, "card5");
     }// </editor-fold>//GEN-END:initComponents
     public void populate(){
         DefaultTableModel model = (DefaultTableModel) Service.getModel();
@@ -337,6 +419,26 @@ Boolean access=false;
             
         }
  
+    }
+    
+    
+    
+    public void populateDeli(){
+        DefaultTableModel model = (DefaultTableModel) deli.getModel();
+        model.setRowCount(0);
+        System.out.println("This Statement is in Delivery");
+        for(WorkRequest wkk:account.getWorkQueue().getWorkRequestList()){
+            System.out.println("This Type "+ wkk.getType());
+            if(wkk.getType().equalsIgnoreCase("Delivery Assignment")){
+                Object[] row= new Object[4];
+                row[0]=wkk.getMessage();
+                row[1]=wkk.getSender();
+                row[2]=wkk.getType();
+                row[3]=wkk.getStatus();
+                
+                model.addRow(row);
+           }
+        }
     }
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
@@ -369,17 +471,21 @@ Boolean access=false;
         applease.setVisible(false);
         ServiceRequest.setVisible(true);
         WorkArea.setVisible(false);
+        checkpackage.setVisible(false);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         ServiceRequest.setVisible(false);
+         checkpackage.setVisible(false);
+         checkpackage.setVisible(false);
         WorkArea.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
                applease.setVisible(true);
         ServiceRequest.setVisible(false);
+        checkpackage.setVisible(false);
         WorkArea.setVisible(false);
     }//GEN-LAST:event_jButton8ActionPerformed
 
@@ -418,6 +524,23 @@ Boolean access=false;
         
     }//GEN-LAST:event_btnSubmit1ActionPerformed
 
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+        
+         applease.setVisible(false);
+        ServiceRequest.setVisible(false);
+         checkpackage.setVisible(true);
+        WorkArea.setVisible(false);
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        applease.setVisible(false);
+        ServiceRequest.setVisible(false);
+         checkpackage.setVisible(false);
+        WorkArea.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     
     
 
@@ -429,9 +552,12 @@ Boolean access=false;
     private javax.swing.JPanel applease;
     private javax.swing.JButton btnSubmit;
     private javax.swing.JButton btnSubmit1;
+    private javax.swing.JPanel checkpackage;
+    private javax.swing.JTable deli;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
@@ -439,8 +565,10 @@ Boolean access=false;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextField message;
     private javax.swing.JTextField type;
     // End of variables declaration//GEN-END:variables
