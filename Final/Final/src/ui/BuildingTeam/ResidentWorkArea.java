@@ -36,7 +36,9 @@ Boolean access=false;
         
         populate();
         populateLease();
+
         populateDeli();
+
         access=account.isValidate();
         if(!access){
             jButton6.setEnabled(false);
@@ -123,7 +125,9 @@ Boolean access=false;
                         .addGap(16, 16, 16)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(WorkAreaLayout.createSequentialGroup()
+
                         .addGap(345, 345, 345)
+
                         .addGroup(WorkAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(WorkAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
