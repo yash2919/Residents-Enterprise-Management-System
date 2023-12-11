@@ -4,11 +4,18 @@
  */
 package ui.AdministrativeRole;
 
+import business.Enterprise.Enterprise;
+import business.Enterprise.EnterpriseDirectory;
+import business.Organisation.Organisation;
+import business.UserAccount.UserAccount;
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.HashMap;
 import java.util.Map;
+import javax.swing.BorderFactory;
 import javax.swing.JPanel;
+import javax.swing.border.TitledBorder;
 
 /**
  *
@@ -21,9 +28,10 @@ public class AnalyticsJPanel extends javax.swing.JPanel {
      */
     
     private BarGraphPanel barGraphPanel;
-
-    public AnalyticsJPanel() {
+    private EnterpriseDirectory directory;
+    public AnalyticsJPanel(JPanel userProcessContainer,EnterpriseDirectory directory) {
         initComponents();
+        this.directory=directory;
         showBarGraph();
     }
 
@@ -34,46 +42,46 @@ public class AnalyticsJPanel extends javax.swing.JPanel {
      */
     @SuppressWarnings("unchecked")
 
-    private void showBarGraph() {
-        Map<String, Integer> data = new HashMap<>();
-        data.put("CategoryA", 30);
-        data.put("CategoryB", 50);
-        data.put("CategoryC", 20);
-        data.put("CategoryD", 80);
+    private void showBarGraph()  {
+        Integer count=0,count1=0;
+        for(Enterprise ent:directory.getEnterpriseList()){
+            for(Organisation org:ent.getOrganisationDirectory().getOrganisationList()){
+                for(UserAccount usracc:org.getUserAccountDirectory().getUserAccountList()){
+                    if(usracc.getId()!=-1){
+                        if(usracc.isValidate())
+                            count++;
+                        else{
+                            count1++;
+                        }
+                    }
+                }
+            }
+        }
+             Map<String, Integer> data = new HashMap<>();
+        data.put("Lease Approved Residents", count);
+        data.put("Lease Not Approved Residents", count1);
 
         barGraphPanel = new BarGraphPanel(data);
+         barGraphPanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.BLACK), "Residents' Approval Status", TitledBorder.CENTER, TitledBorder.TOP));
+        add(barGraphPanel);
     }
 
     // Inner class for BarGraphPanel
-    protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
-
-        if (barGraphPanel != null) {
-            // Position and size for the BarGraphPanel
-            int x = 50;
-            int y = 50;
-            int width = 400; // Adjust as needed
-            int height = 300; // Adjust as needed
-
-            barGraphPanel.setBounds(x, y, width, height);
-            barGraphPanel.paintComponent(g);
-        }
-    }
-    
-    private class BarGraphPanel extends JPanel {
+     private class BarGraphPanel extends JPanel {
         private Map<String, Integer> data;
 
         public BarGraphPanel(Map<String, Integer> data) {
             this.data = data;
+            setPreferredSize(new java.awt.Dimension(500, 300)); // Adjust panel dimensions
         }
 
         @Override
         protected void paintComponent(Graphics g) {
             super.paintComponent(g);
 
-            int barWidth = 50;
-            int spaceBetweenBars = 20;
-            int x = 0;
+            int barWidth = 80;
+            int spaceBetweenBars = 100;
+            int x = 50;
             int maxHeight = getHeight() - 50;
 
             for (Map.Entry<String, Integer> entry : data.entrySet()) {
@@ -81,11 +89,12 @@ public class AnalyticsJPanel extends javax.swing.JPanel {
                 int value = entry.getValue();
                 int barHeight = (int) ((double) value / getMaxValue(data) * maxHeight);
 
-                g.setColor(Color.BLUE);
+                // Customized colors for bars and labels
+                g.setColor(new Color(76, 175, 80)); // Green color for bars
                 g.fillRect(x, getHeight() - barHeight, barWidth, barHeight);
 
                 g.setColor(Color.BLACK);
-                g.drawString(label, x + barWidth / 2 - g.getFontMetrics().stringWidth(label) / 2, getHeight() - 5);
+                g.drawString(label, x + barWidth / 2 - g.getFontMetrics().stringWidth(label) / 2, getHeight() - 10);
 
                 x += barWidth + spaceBetweenBars;
             }
@@ -99,146 +108,11 @@ public class AnalyticsJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        Residents = new javax.swing.JPanel();
-        Maintenance = new javax.swing.JPanel();
-        Pest = new javax.swing.JPanel();
-
         setLayout(new java.awt.CardLayout());
-
-        jButton1.setText("Residents Approved/Rejected");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        jButton2.setText("Maintenance Service Requests type");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
-        jButton3.setText("Pest Control Service Requests type");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
-        jButton4.setText("jButton4");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(209, 209, 209)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton4))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(216, 216, 216)
-                        .addComponent(jButton2)
-                        .addGap(13, 13, 13)))
-                .addContainerGap(114, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(128, 128, 128)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
-                    .addComponent(jButton3))
-                .addGap(188, 188, 188))
-        );
-
-        add(jPanel1, "card2");
-
-        javax.swing.GroupLayout ResidentsLayout = new javax.swing.GroupLayout(Residents);
-        Residents.setLayout(ResidentsLayout);
-        ResidentsLayout.setHorizontalGroup(
-            ResidentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 956, Short.MAX_VALUE)
-        );
-        ResidentsLayout.setVerticalGroup(
-            ResidentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 476, Short.MAX_VALUE)
-        );
-
-        add(Residents, "card3");
-
-        javax.swing.GroupLayout MaintenanceLayout = new javax.swing.GroupLayout(Maintenance);
-        Maintenance.setLayout(MaintenanceLayout);
-        MaintenanceLayout.setHorizontalGroup(
-            MaintenanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 956, Short.MAX_VALUE)
-        );
-        MaintenanceLayout.setVerticalGroup(
-            MaintenanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 476, Short.MAX_VALUE)
-        );
-
-        add(Maintenance, "card4");
-
-        javax.swing.GroupLayout PestLayout = new javax.swing.GroupLayout(Pest);
-        Pest.setLayout(PestLayout);
-        PestLayout.setHorizontalGroup(
-            PestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 956, Short.MAX_VALUE)
-        );
-        PestLayout.setVerticalGroup(
-            PestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 476, Short.MAX_VALUE)
-        );
-
-        add(Pest, "card5");
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       jPanel1.setVisible(false);
-        Residents.setVisible(true);
-        Maintenance.setVisible(false);
-        Pest.setVisible(false);
-       
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        jPanel1.setVisible(false);
-        Residents.setVisible(false);
-        Maintenance.setVisible(true);
-        Pest.setVisible(false);
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-               jPanel1.setVisible(false);
-        Residents.setVisible(false);
-        Maintenance.setVisible(false);
-        Pest.setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Maintenance;
-    private javax.swing.JPanel Pest;
-    private javax.swing.JPanel Residents;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 
 }

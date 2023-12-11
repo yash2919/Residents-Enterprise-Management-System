@@ -38,6 +38,8 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         manageOrganizationJButton = new javax.swing.JButton();
         lblTitle = new javax.swing.JLabel();
         analyticsJPanel = new javax.swing.JButton();
+        analyticsJPanel1 = new javax.swing.JButton();
+        analyticsJPanel2 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -72,10 +74,26 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         lblTitle.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         analyticsJPanel.setBackground(new java.awt.Color(153, 204, 255));
-        analyticsJPanel.setText("Analytics");
+        analyticsJPanel.setText("Residents Analytics");
         analyticsJPanel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 analyticsJPanelActionPerformed(evt);
+            }
+        });
+
+        analyticsJPanel1.setBackground(new java.awt.Color(153, 204, 255));
+        analyticsJPanel1.setText("Pest Service Req Graph");
+        analyticsJPanel1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                analyticsJPanel1ActionPerformed(evt);
+            }
+        });
+
+        analyticsJPanel2.setBackground(new java.awt.Color(153, 204, 255));
+        analyticsJPanel2.setText("Maintenance Service Req Graph");
+        analyticsJPanel2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                analyticsJPanel2ActionPerformed(evt);
             }
         });
 
@@ -93,8 +111,10 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
                     .addComponent(manageOrganizationJButton, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
                     .addComponent(manageEmployeeJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(userJButton, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
-                    .addComponent(analyticsJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(200, Short.MAX_VALUE))
+                    .addComponent(analyticsJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(analyticsJPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(analyticsJPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(231, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {manageEmployeeJButton, manageOrganizationJButton, userJButton});
@@ -112,7 +132,11 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
                 .addComponent(userJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(analyticsJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addComponent(analyticsJPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(analyticsJPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {manageEmployeeJButton, manageOrganizationJButton, userJButton});
@@ -148,15 +172,28 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
 
     private void analyticsJPanelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_analyticsJPanelActionPerformed
         // TODO add your handling code here:
-        AnalyticsJPanel analyticsJPanel = new AnalyticsJPanel();
+        AnalyticsJPanel analyticsJPanel = new AnalyticsJPanel(userProcessContainer, business.getEnterpriseDirectory());
         userProcessContainer.add("analyticsJPanel", analyticsJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_analyticsJPanelActionPerformed
+
+    private void analyticsJPanel1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_analyticsJPanel1ActionPerformed
+         Maintenance maintenance = new Maintenance(userProcessContainer, business.getEnterpriseDirectory());
+        userProcessContainer.add("maintenance", maintenance);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_analyticsJPanel1ActionPerformed
+
+    private void analyticsJPanel2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_analyticsJPanel2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_analyticsJPanel2ActionPerformed
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton analyticsJPanel;
+    private javax.swing.JButton analyticsJPanel1;
+    private javax.swing.JButton analyticsJPanel2;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JButton manageEmployeeJButton;
     private javax.swing.JButton manageOrganizationJButton;
