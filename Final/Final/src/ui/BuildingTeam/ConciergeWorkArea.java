@@ -466,9 +466,7 @@ Business business;
             for(WorkRequest wkk:par.getWorkQueue().getWorkRequestList()){
                 if(wkk.getMessage().equals(request)){
                     wok=wkk;
-                }else{
-                    JOptionPane.showMessageDialog(null, "Can not find work request.");
-                    return;
+                    break;
                 }
             }
             if(wok!=null){
@@ -518,9 +516,7 @@ Business business;
             for(WorkRequest wkk1:par.getWorkQueue().getWorkRequestList()){
                 if(wkk1.getMessage().equals(request)){
                     wok2=wkk1;
-                }else{
-                    JOptionPane.showMessageDialog(null, "Can not find work request.");
-                    return;
+                    break;
                 }
             }
             if(wok2!=null){
@@ -564,9 +560,7 @@ Business business;
             for(WorkRequest wkk2:par.getWorkQueue().getWorkRequestList()){
                 if(wkk2.getMessage().equals(request)){
                     wok3=wkk2;
-                }else{
-                    JOptionPane.showMessageDialog(null, "Can not find work request.");
-                    return;
+                    break;
                 }
             }
             if(wok3!=null){
