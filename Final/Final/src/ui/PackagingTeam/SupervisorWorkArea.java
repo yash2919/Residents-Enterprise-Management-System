@@ -34,6 +34,8 @@ public class SupervisorWorkArea extends javax.swing.JPanel {
     this.ent = ent;
     this.business = business;
     this.userAccount = account;
+    
+    populateAllDeliveries();
     }
 
     /**
@@ -47,15 +49,16 @@ public class SupervisorWorkArea extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         assigndel = new javax.swing.JButton();
-        checkstatus = new javax.swing.JButton();
         Addpackage = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         AssignDelivery = new javax.swing.JTable();
         deliveryguy = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        AssignDelivery1 = new javax.swing.JTable();
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Packaging Team Supervisor Portal");
-        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(null));
 
         assigndel.setText("Assign a Delivery");
         assigndel.addActionListener(new java.awt.event.ActionListener() {
@@ -63,8 +66,6 @@ public class SupervisorWorkArea extends javax.swing.JPanel {
                 assigndelActionPerformed(evt);
             }
         });
-
-        checkstatus.setText("Check Delivery Status");
 
         Addpackage.setText("Add package to Deliver");
         Addpackage.addActionListener(new java.awt.event.ActionListener() {
@@ -107,53 +108,75 @@ public class SupervisorWorkArea extends javax.swing.JPanel {
             }
         });
 
+        AssignDelivery1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Package", "Delivery to Unit No.", "Resident Name", "Status", "DeliveryGuy"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                true, false, true, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(AssignDelivery1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(45, 45, 45))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(Addpackage, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(assigndel, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45)
+                .addComponent(deliveryguy, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(104, 104, 104))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(checkstatus, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Addpackage, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(174, 174, 174)
-                                .addComponent(assigndel, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(51, 51, 51)
-                                .addComponent(deliveryguy, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 776, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addGap(52, 52, 52)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 707, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(116, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(56, 56, 56)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Addpackage, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(assigndel, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(deliveryguy, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(checkstatus, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(102, 102, 102))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Addpackage, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(assigndel, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(deliveryguy, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(98, 98, 98)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(152, 152, 152))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void AddpackageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddpackageActionPerformed
         // TODO add your handling code here:
-        
-        // Prompt the user for package details using JOptionPane
+          // Prompt the user for package details using JOptionPane
     String residentName = JOptionPane.showInputDialog(this, "Enter Resident Name:");
     String residentIdString = JOptionPane.showInputDialog(this, "Enter Unit No.:");
     String packageDetails = JOptionPane.showInputDialog(this, "Enter Package Details:");
@@ -168,9 +191,8 @@ public class SupervisorWorkArea extends javax.swing.JPanel {
     }
 
     // Add a new row to the table with the entered details
-      DefaultTableModel model = (DefaultTableModel) AssignDelivery.getModel();
+    DefaultTableModel model = (DefaultTableModel) AssignDelivery.getModel();
     model.setRowCount(0);
-    
     Object[] rowData = {
         packageDetails,
         residentId,
@@ -200,22 +222,24 @@ public class SupervisorWorkArea extends javax.swing.JPanel {
     }
 
     // Get the values from the selected row
-    String residentName = (String) AssignDelivery.getValueAt(selectedRowIndex, 2); // Assuming "Resident Name" is at column index 2
+    int residentid = (int) AssignDelivery.getValueAt(selectedRowIndex, 1); // Assuming "Resident Name" is at column index 2
     String deliveryGuy = deliveryguy.getText();
 
     // Check if the logged-in user is the same as the entered delivery guy
-    if (deliveryGuy.equals(userAccount.getUsername())) {
+   
         // Create a WorkRequest
         WorkRequest workRequest = new WorkRequest() {};
-        workRequest.setMessage("Delivery assignment for resident: " + residentName);
+        workRequest.setMessage(String.valueOf(residentid));
         workRequest.setSender(userAccount);
 
         // Set the receiver based on the entered delivery guy
         UserAccount deliveryGuyAccount = null;
+        
         for (Organisation org : ent.getOrganisationDirectory().getOrganisationList()) {
-            for (UserAccount userAccount : org.getUserAccountDirectory().getUserAccountList()) {
-                if (userAccount.getUsername().equals(deliveryGuy)) {
-                    deliveryGuyAccount = userAccount;
+            for (UserAccount ur : org.getUserAccountDirectory().getUserAccountList()) {
+                if (ur.getUsername().equals(deliveryGuy)) {
+                    deliveryGuyAccount = ur;
+                 //   System.out.print(deliveryGuyAccount);
                     break; // Exit the loop once a match is found
                 }
             }
@@ -226,12 +250,15 @@ public class SupervisorWorkArea extends javax.swing.JPanel {
 
         if (deliveryGuyAccount != null) {
             workRequest.setReceiver(deliveryGuyAccount);
+            deliveryGuyAccount.getWorkQueue().getWorkRequestList().add(workRequest);
+            
+            System.out.println(deliveryGuyAccount.getWorkQueue().getWorkRequestList());
         } else {
             JOptionPane.showMessageDialog(this, "Delivery guy not found.");
             return;
         }
 
-        workRequest.setStatus("Pending");
+        workRequest.setStatus("In-Transit");
         workRequest.setType("Delivery Assignment");
 
         // Add the WorkRequest to your business or the appropriate data structure
@@ -242,23 +269,45 @@ public class SupervisorWorkArea extends javax.swing.JPanel {
 
         // Notify the user about the successful assignment
         JOptionPane.showMessageDialog(this, "Delivery assigned successfully!");
-    } else {
-        JOptionPane.showMessageDialog(this, "You can only assign a delivery to yourself as the delivery guy.");
-    }
+    
     }//GEN-LAST:event_assigndelActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Addpackage;
     private javax.swing.JTable AssignDelivery;
+    private javax.swing.JTable AssignDelivery1;
     private javax.swing.JButton assigndel;
-    private javax.swing.JButton checkstatus;
     private javax.swing.JTextField deliveryguy;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 
  
+    private void populateAllDeliveries() {
+// Assuming you have a table named "AssignDelivery" in the delivery guy's UI
+    DefaultTableModel model = (DefaultTableModel) AssignDelivery1.getModel();
+
+    // Clear the table before populating
+    model.setRowCount(0);
+
+    // Iterate through the WorkRequests and add assigned deliveries to the table
+    for (WorkRequest workRequest : userAccount.getWorkQueue().getWorkRequestList()) {
+        System.out.println(workRequest);
+        // Check if the work request is related to delivery assignments
+//        if ("Delivery Assignment".equals(workRequest.getType()) && "In-Transit".equals(workRequest.getStatus())) {
+            // Extract relevant information and add a row to the table
+            Object[] row = {
+                workRequest.getMessage(),
+                workRequest.getSender().getUsername(),
+                workRequest.getReceiver().getUsername(),
+                workRequest.getRequestDate().toString() // Adjust this line based on the data type of getRequestDate
+            };
+            model.addRow(row);
+//        }
+    }
+}
 
 
 }
