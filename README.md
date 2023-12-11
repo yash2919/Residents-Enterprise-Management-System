@@ -35,3 +35,6 @@ The primary focus of this project is to establish a robust communication ecosyst
 Enhanced Communication: Foster seamless communication between enterprises and organizational units.
 Service Request Management: Streamline the process of handling service requests efficiently.
 Collaborative Effort: Encourage cooperative efforts across national boundaries for a greater collective impact.
+https://docs.google.com/presentation/d/1UzG88JQI3BY1fbqfx_YNsKWWIkPlOozKazpT5Jd_vkQ/edit?usp=sharing
+
+https://docs.google.com/document/d/1jS0ukJa37NfETdiW-Vgw1SbJ7_UmIKkyEOTk4SdTOxA/edit?usp=sharing
