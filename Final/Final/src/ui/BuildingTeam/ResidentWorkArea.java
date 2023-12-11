@@ -22,6 +22,7 @@ JPanel userProcessContainer;
 UserAccount account;
 Business business;
 BuildingTeamEnterprise par;
+Boolean access=false;
 
     /**
      * Creates new form ResidentWorkArea
@@ -34,7 +35,16 @@ BuildingTeamEnterprise par;
         this.business=business;
         
         populate();
-                     populateLease();
+        populateLease();
+        access=account.isValidate();
+        if(!access){
+            jButton6.setEnabled(false);
+              jButton10.setEnabled(false);
+        }
+        if(access){
+            jButton8.setEnabled(false);
+            jButton8.setText("Lease Approved");
+        }
 
         
     }
@@ -51,9 +61,7 @@ BuildingTeamEnterprise par;
         WorkArea = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
         ServiceRequest = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -85,16 +93,12 @@ BuildingTeamEnterprise par;
             }
         });
 
-        jButton7.setText("Raise complaint");
-
         jButton8.setText("Submit Lease Docs");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton8ActionPerformed(evt);
             }
         });
-
-        jButton9.setText("Manage Payments");
 
         jButton10.setText("Check Packages");
 
@@ -108,17 +112,12 @@ BuildingTeamEnterprise par;
                         .addGap(16, 16, 16)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(WorkAreaLayout.createSequentialGroup()
-                        .addGap(198, 198, 198)
+                        .addGap(326, 326, 326)
                         .addGroup(WorkAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(WorkAreaLayout.createSequentialGroup()
-                                .addGroup(WorkAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
-                                    .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(125, 125, 125)
-                                .addGroup(WorkAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton7)
-                                    .addComponent(jButton9))))))
+                            .addGroup(WorkAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         WorkAreaLayout.setVerticalGroup(
@@ -126,17 +125,13 @@ BuildingTeamEnterprise par;
             .addGroup(WorkAreaLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(132, 132, 132)
-                .addGroup(WorkAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton7))
-                .addGap(29, 29, 29)
-                .addGroup(WorkAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton9))
-                .addGap(30, 30, 30)
+                .addGap(108, 108, 108)
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41)
+                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
                 .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(138, Short.MAX_VALUE))
+                .addContainerGap(137, Short.MAX_VALUE))
         );
 
         add(WorkArea, "card2");
@@ -389,7 +384,8 @@ BuildingTeamEnterprise par;
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+               applease.setVisible(false);
+       WorkArea.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btnSubmit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmit1ActionPerformed
@@ -437,9 +433,7 @@ BuildingTeamEnterprise par;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

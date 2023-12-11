@@ -61,7 +61,6 @@ Business business;
         jScrollPane1 = new javax.swing.JScrollPane();
         Service = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
@@ -186,14 +185,6 @@ Business business;
         jLabel6.setText("Concierge Service Request Area");
         jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jButton5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton5.setText("Packaging");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-
         jButton6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton6.setText("Pest Control");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -229,9 +220,7 @@ Business business;
                     .addGroup(ServiceRequestLayout.createSequentialGroup()
                         .addGap(207, 207, 207)
                         .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
+                        .addGap(169, 169, 169)
                         .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(ServiceRequestLayout.createSequentialGroup()
                         .addGap(254, 254, 254)
@@ -250,7 +239,6 @@ Business business;
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(ServiceRequestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(130, Short.MAX_VALUE))
@@ -507,49 +495,6 @@ Business business;
         }
     }//GEN-LAST:event_jButton7ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-       int selectedRow = Service.getSelectedRow();
-        if (selectedRow >= 0) {
-            String request = (String) Service.getValueAt(selectedRow, 3);
-            
-            WorkRequest wok2=null;
-            for(WorkRequest wkk1:par.getWorkQueue().getWorkRequestList()){
-                if(wkk1.getMessage().equals(request)){
-                    wok2=wkk1;
-                    break;
-                }
-            }
-            if(wok2!=null){
-                Enterprise ent1 = null;
-                for (Enterprise enter : business.getEnterpriseDirectory().getEnterpriseList()){
-            
-            if (enter instanceof PackagingTeamEnterprise){
-            
-                ent1 = enter;
-                break;
-            }
-            }
-                if (ent1!=null){
-
-            ent1.getWorkQueue().getWorkRequestList().add(wok2);
-            wok2.setSender2(account);
-             JOptionPane.showMessageDialog(null, "Service request Sent to PackagingTeamEnterprise ");
-             
-        }
-                
-                
-                
-            }
-            
-            
-            
-        }else{
-          JOptionPane.showMessageDialog(null, "Please select a request message to process.");
-            return;  
-        }
-        
-    }//GEN-LAST:event_jButton5ActionPerformed
-
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
          int selectedRow = Service.getSelectedRow();
@@ -656,7 +601,6 @@ Business business;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
