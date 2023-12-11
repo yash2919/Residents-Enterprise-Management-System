@@ -40,7 +40,6 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
                               <Component id="btnRequestTest2" linkSize="1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="125" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="btnRequestTest" linkSize="1" min="-2" max="-2" attributes="0"/>
@@ -77,7 +76,7 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnRequestTest2" linkSize="2" min="-2" pref="36" max="-2" attributes="0"/>
-              <EmptySpace pref="76" max="32767" attributes="0"/>
+              <EmptySpace pref="77" max="32767" attributes="0"/>
               <Component id="btnBack" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
           </Group>
