@@ -8,6 +8,7 @@ import business.Business;
 import business.Enterprise.MaintenanceTeamEnterprise;
 import business.UserAccount.UserAccount;
 import business.WorkQueue.WorkRequest;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -34,12 +35,10 @@ Business business;
         this.account=account;
         this.par=par;
         this.business=business;
-        show();
+        
         populateTable();
     }
-    public void show(){
-        System.out.println(par.getWorkQueue().getWorkRequestList()+"hbhb");
-    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -51,33 +50,39 @@ Business business;
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        cleaning = new javax.swing.JTable();
+        jTable1 = new javax.swing.JTable();
         btnRefresh = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        Assigned = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Cleaning Job Work Portal");
         jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jButton1.setText("Process My Job");
-        jButton1.setEnabled(false);
-
-        jButton2.setText("Assign to me");
-
-        cleaning.setModel(new javax.swing.table.DefaultTableModel(
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Unit No.", "Resident Name", "Status", "Feedback"
+                "Unit No.", "Resident Name", "Assigned", "Status", "Message"
             }
-        ));
-        jScrollPane1.setViewportView(cleaning);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTable1);
 
         btnRefresh.setText("Refresh");
         btnRefresh.addActionListener(new java.awt.event.ActionListener() {
@@ -86,68 +91,187 @@ Business business;
             }
         });
 
+        jButton2.setText("Assign to me");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Assignment To Me");
+
+        Assigned.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Unit No.", "Resident Name", "Assigned", "Status", "Message"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(Assigned);
+
+        jButton1.setText("Process My Job");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(77, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 670, Short.MAX_VALUE))
-                .addGap(72, 72, 72))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(101, 101, 101)
-                .addComponent(btnRefresh)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(89, 89, 89))
+                .addContainerGap(83, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(199, 199, 199))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 641, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 670, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnRefresh)
+                        .addGap(416, 416, 416)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 641, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(66, 66, 66))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
+                .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnRefresh))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
+        populateme();
+        populateTable();
         
     }//GEN-LAST:event_btnRefreshActionPerformed
-
 public void populateTable() {
-        DefaultTableModel model = (DefaultTableModel) cleaning.getModel();
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
 
         model.setRowCount(0);
         
         System.out.println(par.getWorkQueue().getWorkRequestList()+"Jj");
         for (WorkRequest request : par.getWorkQueue().getWorkRequestList()) {
-            Object[] row = new Object[4];
+            Object[] row = new Object[5];
             row[0] = request;
-            row[1] = request.getSender().getOrganisation().getName();
+            row[1] = request.getSender().id;
             row[2] = request.getReceiver() == null ? null : request.getReceiver().getOrganisation().getName();
             row[3] = request.getStatus();
+            row[4]=request.getMessage();
+            
 
             model.addRow(row);
         }
     }
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = jTable1.getSelectedRow();
+        if (selectedRow >= 0) {
+
+            WorkRequest request = (WorkRequest) jTable1.getValueAt(selectedRow, 0);
+            if (request.getMessage().equalsIgnoreCase("Completed")) {
+                JOptionPane.showMessageDialog(null, "Request already processed.");
+                return;
+            } else {
+
+                request.setReceiver(account);
+                request.setStatus("Pending");
+                account.getWorkQueue().getWorkRequestList().add(request);
+                JOptionPane.showMessageDialog(null, "Service Request Assigned");
+
+            }
+        }else {
+            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+            return;
+        }
+
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = Assigned.getSelectedRow();
+        if (selectedRow >= 0) {
+
+            WorkRequest request = (WorkRequest) Assigned.getValueAt(selectedRow, 0);
+            String Status1=(String) Assigned.getValueAt(selectedRow, 3);
+            String Mess= (String) Assigned.getValueAt(selectedRow, 4);
+
+            if(!Status1.isEmpty() && !Mess.isEmpty()){
+
+                request.setMessage(Mess);
+                request.setStatus(Status1);
+
+                JOptionPane.showMessageDialog(null, "Updated Service Request.");
+
+            }else{
+                JOptionPane.showMessageDialog(null, "Set Status and Message Before Process .");
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+            return;
+        }
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+public void populateme() {
+         DefaultTableModel model = (DefaultTableModel) Assigned.getModel();
+
+        model.setRowCount(0);
+        
+        for(WorkRequest workl:account.getWorkQueue().getWorkRequestList()){
+            Object[] row = new Object[5];
+            row[0] = workl;
+            row[1] = workl.getSender().id;
+            row[2] = workl.getReceiver() == null ? null : workl.getReceiver().getUsername();
+            row[3] = workl.getStatus();
+            row[4]=workl.getMessage();
+            
+
+            model.addRow(row);
+            
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable Assigned;
     private javax.swing.JButton btnRefresh;
-    private javax.swing.JTable cleaning;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

@@ -35,9 +35,15 @@ Business business;
         show();
                 populateTable();
                 populateme();
+                enable1();
 
     }
-    
+    public void enable1(){
+         if(!account.getWorkQueue().getWorkRequestList().isEmpty()){
+             
+         }
+
+    }
     public void populateTable() {
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
 
@@ -46,8 +52,8 @@ Business business;
         System.out.println(par.getWorkQueue().getWorkRequestList()+"Jj");
         for (WorkRequest request : par.getWorkQueue().getWorkRequestList()) {
             Object[] row = new Object[5];
-            row[0] = request.getSender().id;
-            row[1] = request.getSender().getUsername();
+            row[0] = request;
+            row[1] = request.getSender().id;
             row[2] = request.getReceiver() == null ? null : request.getReceiver().getOrganisation().getName();
             row[3] = request.getStatus();
             row[4]=request.getMessage();
@@ -109,7 +115,11 @@ Business business;
         jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jButton1.setText("Process My Job");
-        jButton1.setEnabled(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Assign to me");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -169,14 +179,14 @@ Business business;
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(46, 46, 46)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(199, 199, 199))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addComponent(btnRefresh)
                                 .addGap(416, 416, 416)
                                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 641, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 641, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 641, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(95, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -190,22 +200,21 @@ Business business;
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRefresh)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(7, 7, 7)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(45, 45, 45)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(36, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
-       
+populateme();
+ populateTable();
+ enable1();
+
     }//GEN-LAST:event_btnRefreshActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -221,8 +230,10 @@ Business business;
             
             request.setReceiver(account);
             request.setStatus("Pending");
+            account.getWorkQueue().getWorkRequestList().add(request);
+            JOptionPane.showMessageDialog(null, "Service Request Assigned");
             
-            populateme();
+            
             
         }
         }else {
@@ -233,6 +244,35 @@ Business business;
         
         
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+       int selectedRow = Assigned.getSelectedRow();
+        if (selectedRow >= 0) {
+            
+             WorkRequest request = (WorkRequest) Assigned.getValueAt(selectedRow, 0);
+             String Status1=(String) Assigned.getValueAt(selectedRow, 3);
+             String Mess= (String) Assigned.getValueAt(selectedRow, 4);
+             
+             if(!Status1.isEmpty() && !Mess.isEmpty()){
+                  
+                 request.setMessage(Mess);
+                 request.setStatus(Status1);
+                 
+                 JOptionPane.showMessageDialog(null, "Updated Service Request."); 
+                 
+             }else{
+                JOptionPane.showMessageDialog(null, "Set Status and Message Before Process ."); 
+             }
+            
+            
+        } else {
+            JOptionPane.showMessageDialog(null, "Choose a reuest to process.");
+            return;
+        }
+        
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
     public void populateme(){
         DefaultTableModel model = (DefaultTableModel) Assigned.getModel();
 
@@ -240,8 +280,8 @@ Business business;
         
         for(WorkRequest workl:account.getWorkQueue().getWorkRequestList()){
             Object[] row = new Object[5];
-            row[0] = workl.getSender().id;
-            row[1] = workl.getSender().getUsername();
+            row[0] = workl;
+            row[1] = workl.getSender().id;
             row[2] = workl.getReceiver() == null ? null : workl.getReceiver().getUsername();
             row[3] = workl.getStatus();
             row[4]=workl.getMessage();
