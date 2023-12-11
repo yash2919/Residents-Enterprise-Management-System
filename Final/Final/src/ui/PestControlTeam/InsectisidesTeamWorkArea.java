@@ -11,6 +11,11 @@ import business.UserAccount.UserAccount;
 import business.WorkQueue.LabTestWorkRequest;
 import business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -25,6 +30,7 @@ public class InsectisidesTeamWorkArea extends javax.swing.JPanel {
     private Business business;
     private UserAccount userAccount;
     private PestControlEnterprise pestOrganization;
+    private Image backgroundImage;
 
     /**
      * Creates new form LabAssistantWorkAreaJPanel
@@ -37,9 +43,21 @@ public class InsectisidesTeamWorkArea extends javax.swing.JPanel {
         this.business = business;
         this.pestOrganization = (PestControlEnterprise) organization;
         
+         try {
+            backgroundImage = ImageIO.read(new File("/Users/uttkarsh/Desktop/final-project-team_titan/Final/pest.jpeg"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Handle the exception (e.g., log the error, show a message)
+        }
         System.out.println(pestOrganization.getName());
 
        populate();
+    }
+      @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        // Draw the background image
+        g.drawImage(backgroundImage, 0, 0, this.getWidth(), this.getHeight(), this);
     }
     
     public void populate(){

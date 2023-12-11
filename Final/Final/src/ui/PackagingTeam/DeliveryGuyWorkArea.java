@@ -12,6 +12,11 @@ import business.Enterprise.PackagingTeamEnterprise;
 import business.Organisation.Organisation;
 import business.UserAccount.UserAccount;
 import business.WorkQueue.WorkRequest;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -32,6 +37,8 @@ public class DeliveryGuyWorkArea extends javax.swing.JPanel {
     private PackagingTeamEnterprise ent;
     private Business business;
     private UserAccount userAccount;
+    private Image backgroundImage;
+    
     public DeliveryGuyWorkArea(JPanel userProcessContainer, UserAccount account, PackagingTeamEnterprise par, Business business) {
         initComponents();
         
@@ -40,7 +47,21 @@ public class DeliveryGuyWorkArea extends javax.swing.JPanel {
     this.business = business;
     this.userAccount = account;
     
+    try {
+            backgroundImage = ImageIO.read(new File("/Users/uttkarsh/Desktop/final-project-team_titan/Final/deli.jpeg"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Handle the exception (e.g., log the error, show a message)
+        }
+    
     populateAssignedDeliveries();
+    }
+
+     @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        // Draw the background image
+        g.drawImage(backgroundImage, 0, 0, this.getWidth(), this.getHeight(), this);
     }
 
     /**
@@ -58,9 +79,10 @@ public class DeliveryGuyWorkArea extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         AssignDelivery = new javax.swing.JTable();
 
+        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 255, 204));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Delivery Agent Work Area Portal");
-        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(null));
 
         Updatevalidation.setText("Update Delivery Status");
         Updatevalidation.addActionListener(new java.awt.event.ActionListener() {
@@ -109,10 +131,9 @@ public class DeliveryGuyWorkArea extends javax.swing.JPanel {
                             .addGap(22, 22, 22)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 721, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
-                            .addGap(105, 105, 105)
-                            .addComponent(btnRefresh))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(520, 520, 520)
+                            .addGap(76, 76, 76)
+                            .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(336, 336, 336)
                             .addComponent(Updatevalidation, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(45, Short.MAX_VALUE))
         );
@@ -123,14 +144,11 @@ public class DeliveryGuyWorkArea extends javax.swing.JPanel {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(73, 73, 73)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
-                        .addComponent(btnRefresh))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(Updatevalidation, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(184, Short.MAX_VALUE))
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Updatevalidation, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(190, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

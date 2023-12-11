@@ -14,6 +14,12 @@ import business.Organisation.Organisation;
 import business.UserAccount.UserAccount;
 import business.WorkQueue.LabTestWorkRequest;
 import business.WorkQueue.WorkRequest;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -24,23 +30,41 @@ import ui.MainScreen;
  * @author uttkarsh
  */
 public class ConciergeWorkArea extends javax.swing.JPanel {
-JPanel userProcessContainer;
-UserAccount account; 
-BuildingTeamEnterprise par;
-Business business;
+  JPanel userProcessContainer;
+    UserAccount account; 
+    BuildingTeamEnterprise par;
+    Business business;
+    private Image backgroundImage;
+
     /**
      * Creates new form ConciergeWorkArea
      */
     public ConciergeWorkArea(JPanel userProcessContainer, UserAccount account, BuildingTeamEnterprise par, Business business) {
         initComponents();
-        this.userProcessContainer=userProcessContainer;
-        this.account=account;
-        this.par=par;
-        this.business=business;
+        this.userProcessContainer = userProcessContainer;
+        this.account = account;
+        this.par = par;
+        this.business = business;
+
+        // Load the background image
+        try {
+            backgroundImage = ImageIO.read(new File("/Users/uttkarsh/Desktop/final-project-team_titan/Final/Concierge.jpeg"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Handle the exception (e.g., log the error, show a message)
+        }
         populate();
         check();
     }
 
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        // Draw the background image if loaded successfully
+        if (backgroundImage != null) {
+            g.drawImage(backgroundImage, 0, 0, this.getWidth(), this.getHeight(), this);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -53,9 +77,6 @@ Business business;
         WorkArea = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         ServiceRequest = new javax.swing.JPanel();
         btnBack = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -76,35 +97,17 @@ Business business;
 
         setLayout(new java.awt.CardLayout());
 
+        WorkArea.setBackground(new java.awt.Color(255, 255, 255));
+
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Concierge Work Area");
-        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(null));
 
+        jButton1.setBackground(new java.awt.Color(204, 255, 255));
         jButton1.setText("Raise Service Request");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
-            }
-        });
-
-        jButton2.setText("Check for Package");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
-        jButton3.setText("Send Enquiry to Leasing Team");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
-        jButton4.setText("Check for Complaints");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
             }
         });
 
@@ -113,34 +116,22 @@ Business business;
         WorkAreaLayout.setHorizontalGroup(
             WorkAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(WorkAreaLayout.createSequentialGroup()
-                .addGroup(WorkAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(WorkAreaLayout.createSequentialGroup()
-                        .addGap(326, 326, 326)
-                        .addComponent(jLabel1))
-                    .addGroup(WorkAreaLayout.createSequentialGroup()
-                        .addGap(305, 305, 305)
-                        .addGroup(WorkAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton4)
-                            .addGroup(WorkAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))))
-                .addContainerGap(385, Short.MAX_VALUE))
+                .addGap(68, 68, 68)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 704, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(97, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, WorkAreaLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(306, 306, 306))
         );
         WorkAreaLayout.setVerticalGroup(
             WorkAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(WorkAreaLayout.createSequentialGroup()
                 .addGap(33, 33, 33)
-                .addComponent(jLabel1)
-                .addGap(60, 60, 60)
-                .addComponent(jButton1)
-                .addGap(29, 29, 29)
-                .addComponent(jButton2)
-                .addGap(29, 29, 29)
-                .addComponent(jButton3)
-                .addGap(28, 28, 28)
-                .addComponent(jButton4)
-                .addContainerGap(238, Short.MAX_VALUE))
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(128, 128, 128)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(240, Short.MAX_VALUE))
         );
 
         add(WorkArea, "card7");
@@ -183,7 +174,7 @@ Business business;
 
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Concierge Service Request Area");
-        jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(null));
 
         jButton6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton6.setText("Pest Control");
@@ -248,7 +239,7 @@ Business business;
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Packages");
-        jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(null));
 
         btnBack1.setText("BACK");
         btnBack1.addActionListener(new java.awt.event.ActionListener() {
@@ -285,7 +276,7 @@ Business business;
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Enquries");
-        jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(null));
 
         btnBack2.setText("BACK");
         btnBack2.addActionListener(new java.awt.event.ActionListener() {
@@ -322,7 +313,7 @@ Business business;
 
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Complaints");
-        jLabel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel5.setBorder(javax.swing.BorderFactory.createLineBorder(null));
 
         btnBack3.setText("BACK");
         btnBack3.addActionListener(new java.awt.event.ActionListener() {
@@ -366,47 +357,6 @@ Business business;
         Enquries.setVisible(false);
         
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        ServiceRequest.setVisible(false);
-        Package.setVisible(true);
-        Complaints.setVisible(false);
-        WorkArea.setVisible(false);
-        Enquries.setVisible(false);
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        ServiceRequest.setVisible(false);
-        Package.setVisible(false);
-        Complaints.setVisible(false);
-        WorkArea.setVisible(false);
-        Enquries.setVisible(true);
-        
-        LabTestWorkRequest request = new LabTestWorkRequest();
-        request.setMessage("Enquiry Check");
-        request.setSender(account);
-        request.setStatus("Sent");
-        
-
-        if (par!=null){
-            System.out.println(par.getWorkQueue().getWorkRequestList()+"    bjdsvsbdvk");
-            par.getWorkQueue().getWorkRequestList().add(request);
-            account.getWorkQueue().getWorkRequestList().add(request);
-        }
-        
-        JOptionPane.showMessageDialog(null, "Request for enq message sent");
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-        ServiceRequest.setVisible(false);
-        Package.setVisible(false);
-        Complaints.setVisible(true);
-        WorkArea.setVisible(false);
-        Enquries.setVisible(false);
-    }//GEN-LAST:event_jButton4ActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
@@ -598,9 +548,6 @@ Business business;
     private javax.swing.JButton btnBack2;
     private javax.swing.JButton btnBack3;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
