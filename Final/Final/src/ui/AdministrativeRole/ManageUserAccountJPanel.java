@@ -327,6 +327,16 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     private void btnCreateUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateUserActionPerformed
         String userName = txtUserName.getText();
         String password = txtPassword.getText();
+        String userregex = "^(?=.*[0-9])(?=.*[a-zA-Z]).{5,}$";
+         String passregex = "^(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&]).{8,}$";
+        if(!userName.matches(userregex)){
+            JOptionPane.showMessageDialog(null, "Username must contain atleast 1 letter and 1 number and should be of atleast length 5.");
+        }
+        else if(!password.matches(passregex)){
+            JOptionPane.showMessageDialog(null, "Password must contain atleast 1 capital letter and 1 number and 1 special character and should be of atleast length 8.");
+
+        }
+        else{
         Enterprise organization = (Enterprise) cmbOrganization.getSelectedItem();
         Organisation org = (Organisation) cmbEmployee.getSelectedItem();
         Role role = (Role) cmbRoles.getSelectedItem();
@@ -345,8 +355,10 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         popUserAccountsTable();
         
         JOptionPane.showMessageDialog(null, "User Account added successfully.");
+        
         txtUserName.setText("");
         txtPassword.setText("");
+        }
     }//GEN-LAST:event_btnCreateUserActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
